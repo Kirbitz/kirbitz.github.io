@@ -10,7 +10,7 @@ app.use((req, res, next) => {
 })
 
 // Serves the static page to the base URL
-app.use(Express.static('public'))
+app.use(Express.static('docs'))
 
 // Connection created on "localhost:8000"
 app.listen(8000)
