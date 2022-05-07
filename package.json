@@ -8,8 +8,8 @@
   "scripts": {
     "start": "node ./server/index.js",
     "devServe": "nodemon --watch server/index.js --watch server/api/dataHelper.js server/index.js",
-    "client": "esbuild --bundle --minify --target=ES6 --outfile=public/bundle.js client/app.jsx",
-    "devClient": "nodemon --watch client --exec ./node_modules/.bin/esbuild --bundle --sourcemap --target=ES6 --outfile=public/bundle.js client/app.jsx",
+    "client": "esbuild --bundle --minify --target=ES6 --outfile=docs/bundle.js client/app.jsx",
+    "devClient": "nodemon --watch client --exec ./node_modules/.bin/esbuild --bundle --sourcemap --target=ES6 --outfile=docs/bundle.js client/app.jsx",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -27,6 +27,9 @@
   },
   "homepage": "https://github.com/Kirbitz/kirbitz.github.io#readme",
   "devDependencies": {
+    "nodemon": "^2.0.16",
+    "esbuild": "^0.14.38",
+    "express": "^4.18.1", 
     "eslint": "^8.15.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
@@ -35,9 +38,10 @@
     "eslint-plugin-react": "^7.29.4"
   },
   "dependencies": {
-    "esbuild": "^0.14.38",
-    "express": "^4.18.1",
-    "nodemon": "^2.0.16",
+    "@mui/icons-material": "^5.6.1",
+    "@mui/material": "^5.6.1",
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   }
