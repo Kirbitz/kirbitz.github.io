@@ -37900,7 +37900,7 @@ const theme2 = createTheme({ palette: {
       title: "MiniMax Algorithm",
       details: "Tic-Tac-Toe game where the computer will always win.  The computer uses the minimax algorithm to chose the most optimal move.",
       technologies: ["Java", "Windows"],
-      image: "MiniMax.jpg"
+      image: "MiniMaxTicTacToe.jpg"
     },
     {
       id: 2,
