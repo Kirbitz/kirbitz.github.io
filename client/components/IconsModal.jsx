@@ -20,10 +20,16 @@ export default function IconsModal (props) {
         <Typography variant='h4' component='div'>
           Technology Details
         </Typography>
+        <Typography variant='subtitle2' component='div'>
+          Hover Over Icons for more Info
+        </Typography>
       </DialogTitle>
       <IconsModalBody />
-      <DialogActions>
-        <Button variant='outlined' color='secondary' onClick={hideModal}>Close</Button>
+      <DialogActions sx={{ justifyContent: 'space-between' }}>
+        <Typography variant='subtitle2' component='div' sx={{ ml: 2 }}>
+          Icons provided through devicon.dev
+        </Typography>
+        <Button variant='outlined' color='secondary' onClick={hideModal} sx={{ mr: 2 }}>Close</Button>
       </DialogActions>
     </Dialog>
   )

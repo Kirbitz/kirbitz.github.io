@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "title": "MiniMax Algorithm",
+        "details": "Tic-Tac-Toe game where the computer will always win.  The computer uses the minimax algorithm to chose the most optimal move.",
+        "technologies": ["Java", "Windows"],
+        "image": "MiniMax.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Shell Project",
+        "details": "A mock up of a real shell.  Uses C++ to simulate a linux shell with several of the main functions that are seen in a unix shell.",
+        "technologies": ["C++", "Linux", "Bash", "VSCode"],
+        "image": "ShellProject.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Scheduling Tool",
+        "details": "Scheduling tool that makes use of the humanity api to process employee data.  Mainly used for better data consolidation than humanity.",
+        "technologies": ["JavaScript", "NodeJS", "Express.js", "React", "MaterialUI", "VSCode", "Windows"],
+        "image": "SchedulingTool.jpg"
+    },
+    {
+        "id": 4,
+        "title": "Hand Ciphers",
+        "details": "A variety of different hand ciphers that exist.  Algorithms to encrypt and decrypt those ciphers included for each one.",
+        "technologies": ["Python", "VSCode", "Windows"],
+        "image": "HandCiphers.jpg"
+    }
+]

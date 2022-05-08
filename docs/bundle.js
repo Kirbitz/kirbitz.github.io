@@ -886,7 +886,7 @@
             }
             return lazyType;
           }
-          function forwardRef33(render) {
+          function forwardRef37(render) {
             {
               if (render != null && render.$$typeof === REACT_MEMO_TYPE) {
                 error("forwardRef requires a render function but received a `memo` component. Instead of forwardRef(memo(...)), use memo(forwardRef(...)).");
@@ -1777,7 +1777,7 @@
           exports.createElement = createElement$1;
           exports.createFactory = createFactory;
           exports.createRef = createRef;
-          exports.forwardRef = forwardRef33;
+          exports.forwardRef = forwardRef37;
           exports.isValidElement = isValidElement5;
           exports.lazy = lazy;
           exports.memo = memo2;
@@ -2291,9 +2291,9 @@
           if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
             __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
           }
-          var React66 = require_react();
+          var React72 = require_react();
           var Scheduler = require_scheduler();
-          var ReactSharedInternals = React66.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React72.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           var suppressWarning = false;
           function setSuppressWarning(newSuppressWarning) {
             {
@@ -3694,7 +3694,7 @@
             {
               if (props.value == null) {
                 if (typeof props.children === "object" && props.children !== null) {
-                  React66.Children.forEach(props.children, function(child) {
+                  React72.Children.forEach(props.children, function(child) {
                     if (child == null) {
                       return;
                     }
@@ -11266,7 +11266,7 @@
             }
           }
           var fakeInternalInstance = {};
-          var emptyRefsObject = new React66.Component().refs;
+          var emptyRefsObject = new React72.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -23407,7 +23407,7 @@
       if (true) {
         (function() {
           "use strict";
-          var React66 = require_react();
+          var React72 = require_react();
           var enableScopeAPI = false;
           var enableCacheElement = false;
           var enableTransitionTracing = false;
@@ -23438,7 +23438,7 @@
             }
             return null;
           }
-          var ReactSharedInternals = React66.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React72.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           function error(format2) {
             {
               {
@@ -24690,11 +24690,11 @@
   });
 
   // client/app.jsx
-  var import_react19 = __toESM(require_react(), 1);
+  var import_react21 = __toESM(require_react(), 1);
   var import_client = __toESM(require_client(), 1);
 
   // client/EntryPoint.jsx
-  var import_react18 = __toESM(require_react(), 1);
+  var import_react20 = __toESM(require_react(), 1);
 
   // node_modules/@mui/material/colors/common.js
   var common = {
@@ -34668,9 +34668,311 @@ const theme2 = createTheme({ palette: {
   } : void 0;
   var Button_default = Button;
 
-  // node_modules/@mui/material/internal/SwitchBase.js
+  // node_modules/@mui/material/Card/Card.js
   var React44 = __toESM(require_react());
   var import_prop_types31 = __toESM(require_prop_types());
+
+  // node_modules/@mui/material/Card/cardClasses.js
+  function getCardUtilityClass(slot) {
+    return generateUtilityClass("MuiCard", slot);
+  }
+  var cardClasses = generateUtilityClasses("MuiCard", ["root"]);
+
+  // node_modules/@mui/material/Card/Card.js
+  var import_jsx_runtime30 = __toESM(require_jsx_runtime());
+  var _excluded27 = ["className", "raised"];
+  var useUtilityClasses12 = (ownerState) => {
+    const {
+      classes
+    } = ownerState;
+    const slots = {
+      root: ["root"]
+    };
+    return composeClasses(slots, getCardUtilityClass, classes);
+  };
+  var CardRoot = styled_default(Paper_default, {
+    name: "MuiCard",
+    slot: "Root",
+    overridesResolver: (props, styles4) => styles4.root
+  })(() => {
+    return {
+      overflow: "hidden"
+    };
+  });
+  var Card = /* @__PURE__ */ React44.forwardRef(function Card2(inProps, ref) {
+    const props = useThemeProps2({
+      props: inProps,
+      name: "MuiCard"
+    });
+    const {
+      className,
+      raised = false
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded27);
+    const ownerState = _extends({}, props, {
+      raised
+    });
+    const classes = useUtilityClasses12(ownerState);
+    return /* @__PURE__ */ (0, import_jsx_runtime30.jsx)(CardRoot, _extends({
+      className: clsx_m_default(classes.root, className),
+      elevation: raised ? 8 : void 0,
+      ref,
+      ownerState
+    }, other));
+  });
+  true ? Card.propTypes = {
+    children: import_prop_types31.default.node,
+    classes: import_prop_types31.default.object,
+    className: import_prop_types31.default.string,
+    raised: chainPropTypes(import_prop_types31.default.bool, (props) => {
+      if (props.raised && props.variant === "outlined") {
+        return new Error('MUI: Combining `raised={true}` with `variant="outlined"` has no effect.');
+      }
+      return null;
+    }),
+    sx: import_prop_types31.default.oneOfType([import_prop_types31.default.arrayOf(import_prop_types31.default.oneOfType([import_prop_types31.default.func, import_prop_types31.default.object, import_prop_types31.default.bool])), import_prop_types31.default.func, import_prop_types31.default.object])
+  } : void 0;
+  var Card_default = Card;
+
+  // node_modules/@mui/material/CardActions/CardActions.js
+  var React45 = __toESM(require_react());
+  var import_prop_types32 = __toESM(require_prop_types());
+
+  // node_modules/@mui/material/CardActions/cardActionsClasses.js
+  function getCardActionsUtilityClass(slot) {
+    return generateUtilityClass("MuiCardActions", slot);
+  }
+  var cardActionsClasses = generateUtilityClasses("MuiCardActions", ["root", "spacing"]);
+
+  // node_modules/@mui/material/CardActions/CardActions.js
+  var import_jsx_runtime31 = __toESM(require_jsx_runtime());
+  var _excluded28 = ["disableSpacing", "className"];
+  var useUtilityClasses13 = (ownerState) => {
+    const {
+      classes,
+      disableSpacing
+    } = ownerState;
+    const slots = {
+      root: ["root", !disableSpacing && "spacing"]
+    };
+    return composeClasses(slots, getCardActionsUtilityClass, classes);
+  };
+  var CardActionsRoot = styled_default("div", {
+    name: "MuiCardActions",
+    slot: "Root",
+    overridesResolver: (props, styles4) => {
+      const {
+        ownerState
+      } = props;
+      return [styles4.root, !ownerState.disableSpacing && styles4.spacing];
+    }
+  })(({
+    ownerState
+  }) => _extends({
+    display: "flex",
+    alignItems: "center",
+    padding: 8
+  }, !ownerState.disableSpacing && {
+    "& > :not(:first-of-type)": {
+      marginLeft: 8
+    }
+  }));
+  var CardActions = /* @__PURE__ */ React45.forwardRef(function CardActions2(inProps, ref) {
+    const props = useThemeProps2({
+      props: inProps,
+      name: "MuiCardActions"
+    });
+    const {
+      disableSpacing = false,
+      className
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded28);
+    const ownerState = _extends({}, props, {
+      disableSpacing
+    });
+    const classes = useUtilityClasses13(ownerState);
+    return /* @__PURE__ */ (0, import_jsx_runtime31.jsx)(CardActionsRoot, _extends({
+      className: clsx_m_default(classes.root, className),
+      ownerState,
+      ref
+    }, other));
+  });
+  true ? CardActions.propTypes = {
+    children: import_prop_types32.default.node,
+    classes: import_prop_types32.default.object,
+    className: import_prop_types32.default.string,
+    disableSpacing: import_prop_types32.default.bool,
+    sx: import_prop_types32.default.oneOfType([import_prop_types32.default.arrayOf(import_prop_types32.default.oneOfType([import_prop_types32.default.func, import_prop_types32.default.object, import_prop_types32.default.bool])), import_prop_types32.default.func, import_prop_types32.default.object])
+  } : void 0;
+  var CardActions_default = CardActions;
+
+  // node_modules/@mui/material/CardContent/CardContent.js
+  var React46 = __toESM(require_react());
+  var import_prop_types33 = __toESM(require_prop_types());
+
+  // node_modules/@mui/material/CardContent/cardContentClasses.js
+  function getCardContentUtilityClass(slot) {
+    return generateUtilityClass("MuiCardContent", slot);
+  }
+  var cardContentClasses = generateUtilityClasses("MuiCardContent", ["root"]);
+
+  // node_modules/@mui/material/CardContent/CardContent.js
+  var import_jsx_runtime32 = __toESM(require_jsx_runtime());
+  var _excluded29 = ["className", "component"];
+  var useUtilityClasses14 = (ownerState) => {
+    const {
+      classes
+    } = ownerState;
+    const slots = {
+      root: ["root"]
+    };
+    return composeClasses(slots, getCardContentUtilityClass, classes);
+  };
+  var CardContentRoot = styled_default("div", {
+    name: "MuiCardContent",
+    slot: "Root",
+    overridesResolver: (props, styles4) => styles4.root
+  })(() => {
+    return {
+      padding: 16,
+      "&:last-child": {
+        paddingBottom: 24
+      }
+    };
+  });
+  var CardContent = /* @__PURE__ */ React46.forwardRef(function CardContent2(inProps, ref) {
+    const props = useThemeProps2({
+      props: inProps,
+      name: "MuiCardContent"
+    });
+    const {
+      className,
+      component = "div"
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded29);
+    const ownerState = _extends({}, props, {
+      component
+    });
+    const classes = useUtilityClasses14(ownerState);
+    return /* @__PURE__ */ (0, import_jsx_runtime32.jsx)(CardContentRoot, _extends({
+      as: component,
+      className: clsx_m_default(classes.root, className),
+      ownerState,
+      ref
+    }, other));
+  });
+  true ? CardContent.propTypes = {
+    children: import_prop_types33.default.node,
+    classes: import_prop_types33.default.object,
+    className: import_prop_types33.default.string,
+    component: import_prop_types33.default.elementType,
+    sx: import_prop_types33.default.oneOfType([import_prop_types33.default.arrayOf(import_prop_types33.default.oneOfType([import_prop_types33.default.func, import_prop_types33.default.object, import_prop_types33.default.bool])), import_prop_types33.default.func, import_prop_types33.default.object])
+  } : void 0;
+  var CardContent_default = CardContent;
+
+  // node_modules/@mui/material/CardMedia/CardMedia.js
+  var React47 = __toESM(require_react());
+  var import_prop_types34 = __toESM(require_prop_types());
+
+  // node_modules/@mui/material/CardMedia/cardMediaClasses.js
+  function getCardMediaUtilityClass(slot) {
+    return generateUtilityClass("MuiCardMedia", slot);
+  }
+  var cardMediaClasses = generateUtilityClasses("MuiCardMedia", ["root", "media", "img"]);
+
+  // node_modules/@mui/material/CardMedia/CardMedia.js
+  var import_jsx_runtime33 = __toESM(require_jsx_runtime());
+  var _excluded30 = ["children", "className", "component", "image", "src", "style"];
+  var useUtilityClasses15 = (ownerState) => {
+    const {
+      classes,
+      isMediaComponent,
+      isImageComponent
+    } = ownerState;
+    const slots = {
+      root: ["root", isMediaComponent && "media", isImageComponent && "img"]
+    };
+    return composeClasses(slots, getCardMediaUtilityClass, classes);
+  };
+  var CardMediaRoot = styled_default("div", {
+    name: "MuiCardMedia",
+    slot: "Root",
+    overridesResolver: (props, styles4) => {
+      const {
+        ownerState
+      } = props;
+      const {
+        isMediaComponent,
+        isImageComponent
+      } = ownerState;
+      return [styles4.root, isMediaComponent && styles4.media, isImageComponent && styles4.img];
+    }
+  })(({
+    ownerState
+  }) => _extends({
+    display: "block",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center"
+  }, ownerState.isMediaComponent && {
+    width: "100%"
+  }, ownerState.isImageComponent && {
+    objectFit: "cover"
+  }));
+  var MEDIA_COMPONENTS = ["video", "audio", "picture", "iframe", "img"];
+  var IMAGE_COMPONENTS = ["picture", "img"];
+  var CardMedia = /* @__PURE__ */ React47.forwardRef(function CardMedia2(inProps, ref) {
+    const props = useThemeProps2({
+      props: inProps,
+      name: "MuiCardMedia"
+    });
+    const {
+      children,
+      className,
+      component = "div",
+      image,
+      src,
+      style: style3
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded30);
+    const isMediaComponent = MEDIA_COMPONENTS.indexOf(component) !== -1;
+    const composedStyle = !isMediaComponent && image ? _extends({
+      backgroundImage: `url("${image}")`
+    }, style3) : style3;
+    const ownerState = _extends({}, props, {
+      component,
+      isMediaComponent,
+      isImageComponent: IMAGE_COMPONENTS.indexOf(component) !== -1
+    });
+    const classes = useUtilityClasses15(ownerState);
+    return /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(CardMediaRoot, _extends({
+      className: clsx_m_default(classes.root, className),
+      as: component,
+      role: !isMediaComponent && image ? "img" : void 0,
+      ref,
+      style: composedStyle,
+      ownerState,
+      src: isMediaComponent ? image || src : void 0
+    }, other, {
+      children
+    }));
+  });
+  true ? CardMedia.propTypes = {
+    children: chainPropTypes(import_prop_types34.default.node, (props) => {
+      if (!props.children && !props.image && !props.src && !props.component) {
+        return new Error("MUI: Either `children`, `image`, `src` or `component` prop must be specified.");
+      }
+      return null;
+    }),
+    classes: import_prop_types34.default.object,
+    className: import_prop_types34.default.string,
+    component: import_prop_types34.default.elementType,
+    image: import_prop_types34.default.string,
+    src: import_prop_types34.default.string,
+    style: import_prop_types34.default.object,
+    sx: import_prop_types34.default.oneOfType([import_prop_types34.default.arrayOf(import_prop_types34.default.oneOfType([import_prop_types34.default.func, import_prop_types34.default.object, import_prop_types34.default.bool])), import_prop_types34.default.func, import_prop_types34.default.object])
+  } : void 0;
+  var CardMedia_default = CardMedia;
+
+  // node_modules/@mui/material/internal/SwitchBase.js
+  var React48 = __toESM(require_react());
+  var import_prop_types35 = __toESM(require_prop_types());
 
   // node_modules/@mui/material/internal/switchBaseClasses.js
   function getSwitchBaseUtilityClass(slot) {
@@ -34679,10 +34981,10 @@ const theme2 = createTheme({ palette: {
   var switchBaseClasses = generateUtilityClasses("PrivateSwitchBase", ["root", "checked", "disabled", "input", "edgeStart", "edgeEnd"]);
 
   // node_modules/@mui/material/internal/SwitchBase.js
-  var import_jsx_runtime30 = __toESM(require_jsx_runtime());
-  var import_jsx_runtime31 = __toESM(require_jsx_runtime());
-  var _excluded27 = ["autoFocus", "checked", "checkedIcon", "className", "defaultChecked", "disabled", "disableFocusRipple", "edge", "icon", "id", "inputProps", "inputRef", "name", "onBlur", "onChange", "onFocus", "readOnly", "required", "tabIndex", "type", "value"];
-  var useUtilityClasses12 = (ownerState) => {
+  var import_jsx_runtime34 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime35 = __toESM(require_jsx_runtime());
+  var _excluded31 = ["autoFocus", "checked", "checkedIcon", "className", "defaultChecked", "disabled", "disableFocusRipple", "edge", "icon", "id", "inputProps", "inputRef", "name", "onBlur", "onChange", "onFocus", "readOnly", "required", "tabIndex", "type", "value"];
+  var useUtilityClasses16 = (ownerState) => {
     const {
       classes,
       checked,
@@ -34717,7 +35019,7 @@ const theme2 = createTheme({ palette: {
     padding: 0,
     zIndex: 1
   });
-  var SwitchBase = /* @__PURE__ */ React44.forwardRef(function SwitchBase2(props, ref) {
+  var SwitchBase = /* @__PURE__ */ React48.forwardRef(function SwitchBase2(props, ref) {
     const {
       autoFocus,
       checked: checkedProp,
@@ -34740,7 +35042,7 @@ const theme2 = createTheme({ palette: {
       tabIndex,
       type,
       value
-    } = props, other = _objectWithoutPropertiesLoose(props, _excluded27);
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded31);
     const [checked, setCheckedState] = useControlled_default({
       controlled: checkedProp,
       default: Boolean(defaultChecked),
@@ -34787,8 +35089,8 @@ const theme2 = createTheme({ palette: {
       disableFocusRipple,
       edge
     });
-    const classes = useUtilityClasses12(ownerState);
-    return /* @__PURE__ */ (0, import_jsx_runtime31.jsxs)(SwitchBaseRoot, _extends({
+    const classes = useUtilityClasses16(ownerState);
+    return /* @__PURE__ */ (0, import_jsx_runtime35.jsxs)(SwitchBaseRoot, _extends({
       component: "span",
       className: clsx_m_default(classes.root, className),
       centerRipple: true,
@@ -34801,7 +35103,7 @@ const theme2 = createTheme({ palette: {
       ownerState,
       ref
     }, other, {
-      children: [/* @__PURE__ */ (0, import_jsx_runtime30.jsx)(SwitchBaseInput, _extends({
+      children: [/* @__PURE__ */ (0, import_jsx_runtime34.jsx)(SwitchBaseInput, _extends({
         autoFocus,
         checked: checkedProp,
         defaultChecked,
@@ -34822,35 +35124,35 @@ const theme2 = createTheme({ palette: {
     }));
   });
   true ? SwitchBase.propTypes = {
-    autoFocus: import_prop_types31.default.bool,
-    checked: import_prop_types31.default.bool,
-    checkedIcon: import_prop_types31.default.node.isRequired,
-    classes: import_prop_types31.default.object,
-    className: import_prop_types31.default.string,
-    defaultChecked: import_prop_types31.default.bool,
-    disabled: import_prop_types31.default.bool,
-    disableFocusRipple: import_prop_types31.default.bool,
-    edge: import_prop_types31.default.oneOf(["end", "start", false]),
-    icon: import_prop_types31.default.node.isRequired,
-    id: import_prop_types31.default.string,
-    inputProps: import_prop_types31.default.object,
+    autoFocus: import_prop_types35.default.bool,
+    checked: import_prop_types35.default.bool,
+    checkedIcon: import_prop_types35.default.node.isRequired,
+    classes: import_prop_types35.default.object,
+    className: import_prop_types35.default.string,
+    defaultChecked: import_prop_types35.default.bool,
+    disabled: import_prop_types35.default.bool,
+    disableFocusRipple: import_prop_types35.default.bool,
+    edge: import_prop_types35.default.oneOf(["end", "start", false]),
+    icon: import_prop_types35.default.node.isRequired,
+    id: import_prop_types35.default.string,
+    inputProps: import_prop_types35.default.object,
     inputRef: refType_default,
-    name: import_prop_types31.default.string,
-    onBlur: import_prop_types31.default.func,
-    onChange: import_prop_types31.default.func,
-    onFocus: import_prop_types31.default.func,
-    readOnly: import_prop_types31.default.bool,
-    required: import_prop_types31.default.bool,
-    sx: import_prop_types31.default.object,
-    tabIndex: import_prop_types31.default.oneOfType([import_prop_types31.default.number, import_prop_types31.default.string]),
-    type: import_prop_types31.default.string.isRequired,
-    value: import_prop_types31.default.any
+    name: import_prop_types35.default.string,
+    onBlur: import_prop_types35.default.func,
+    onChange: import_prop_types35.default.func,
+    onFocus: import_prop_types35.default.func,
+    readOnly: import_prop_types35.default.bool,
+    required: import_prop_types35.default.bool,
+    sx: import_prop_types35.default.object,
+    tabIndex: import_prop_types35.default.oneOfType([import_prop_types35.default.number, import_prop_types35.default.string]),
+    type: import_prop_types35.default.string.isRequired,
+    value: import_prop_types35.default.any
   } : void 0;
   var SwitchBase_default = SwitchBase;
 
   // node_modules/@mui/material/Container/Container.js
-  var React45 = __toESM(require_react());
-  var import_prop_types32 = __toESM(require_prop_types());
+  var React49 = __toESM(require_react());
+  var import_prop_types36 = __toESM(require_prop_types());
 
   // node_modules/@mui/material/Container/containerClasses.js
   function getContainerUtilityClass(slot) {
@@ -34859,9 +35161,9 @@ const theme2 = createTheme({ palette: {
   var containerClasses = generateUtilityClasses("MuiContainer", ["root", "disableGutters", "fixed", "maxWidthXs", "maxWidthSm", "maxWidthMd", "maxWidthLg", "maxWidthXl"]);
 
   // node_modules/@mui/material/Container/Container.js
-  var import_jsx_runtime32 = __toESM(require_jsx_runtime());
-  var _excluded28 = ["className", "component", "disableGutters", "fixed", "maxWidth"];
-  var useUtilityClasses13 = (ownerState) => {
+  var import_jsx_runtime36 = __toESM(require_jsx_runtime());
+  var _excluded33 = ["className", "component", "disableGutters", "fixed", "maxWidth"];
+  var useUtilityClasses17 = (ownerState) => {
     const {
       classes,
       fixed,
@@ -34921,7 +35223,7 @@ const theme2 = createTheme({ palette: {
       maxWidth: `${theme.breakpoints.values[ownerState.maxWidth]}${theme.breakpoints.unit}`
     }
   }));
-  var Container = /* @__PURE__ */ React45.forwardRef(function Container2(inProps, ref) {
+  var Container = /* @__PURE__ */ React49.forwardRef(function Container2(inProps, ref) {
     const props = useThemeProps2({
       props: inProps,
       name: "MuiContainer"
@@ -34932,15 +35234,15 @@ const theme2 = createTheme({ palette: {
       disableGutters = false,
       fixed = false,
       maxWidth: maxWidth2 = "lg"
-    } = props, other = _objectWithoutPropertiesLoose(props, _excluded28);
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded33);
     const ownerState = _extends({}, props, {
       component,
       disableGutters,
       fixed,
       maxWidth: maxWidth2
     });
-    const classes = useUtilityClasses13(ownerState);
-    return /* @__PURE__ */ (0, import_jsx_runtime32.jsx)(ContainerRoot, _extends({
+    const classes = useUtilityClasses17(ownerState);
+    return /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(ContainerRoot, _extends({
       as: component,
       ownerState,
       className: clsx_m_default(classes.root, className),
@@ -34948,22 +35250,22 @@ const theme2 = createTheme({ palette: {
     }, other));
   });
   true ? Container.propTypes = {
-    children: import_prop_types32.default.node,
-    classes: import_prop_types32.default.object,
-    className: import_prop_types32.default.string,
-    component: import_prop_types32.default.elementType,
-    disableGutters: import_prop_types32.default.bool,
-    fixed: import_prop_types32.default.bool,
-    maxWidth: import_prop_types32.default.oneOfType([import_prop_types32.default.oneOf(["xs", "sm", "md", "lg", "xl", false]), import_prop_types32.default.string]),
-    sx: import_prop_types32.default.oneOfType([import_prop_types32.default.arrayOf(import_prop_types32.default.oneOfType([import_prop_types32.default.func, import_prop_types32.default.object, import_prop_types32.default.bool])), import_prop_types32.default.func, import_prop_types32.default.object])
+    children: import_prop_types36.default.node,
+    classes: import_prop_types36.default.object,
+    className: import_prop_types36.default.string,
+    component: import_prop_types36.default.elementType,
+    disableGutters: import_prop_types36.default.bool,
+    fixed: import_prop_types36.default.bool,
+    maxWidth: import_prop_types36.default.oneOfType([import_prop_types36.default.oneOf(["xs", "sm", "md", "lg", "xl", false]), import_prop_types36.default.string]),
+    sx: import_prop_types36.default.oneOfType([import_prop_types36.default.arrayOf(import_prop_types36.default.oneOfType([import_prop_types36.default.func, import_prop_types36.default.object, import_prop_types36.default.bool])), import_prop_types36.default.func, import_prop_types36.default.object])
   } : void 0;
   var Container_default = Container;
 
   // node_modules/@mui/material/CssBaseline/CssBaseline.js
-  var React46 = __toESM(require_react());
-  var import_prop_types33 = __toESM(require_prop_types());
-  var import_jsx_runtime33 = __toESM(require_jsx_runtime());
-  var import_jsx_runtime34 = __toESM(require_jsx_runtime());
+  var React50 = __toESM(require_react());
+  var import_prop_types37 = __toESM(require_prop_types());
+  var import_jsx_runtime37 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime38 = __toESM(require_jsx_runtime());
   var html = (theme, enableColorScheme) => _extends({
     WebkitFontSmoothing: "antialiased",
     MozOsxFontSmoothing: "grayscale",
@@ -35013,27 +35315,27 @@ const theme2 = createTheme({ palette: {
       children,
       enableColorScheme = false
     } = props;
-    return /* @__PURE__ */ (0, import_jsx_runtime34.jsxs)(React46.Fragment, {
-      children: [/* @__PURE__ */ (0, import_jsx_runtime33.jsx)(GlobalStyles_default, {
+    return /* @__PURE__ */ (0, import_jsx_runtime38.jsxs)(React50.Fragment, {
+      children: [/* @__PURE__ */ (0, import_jsx_runtime37.jsx)(GlobalStyles_default, {
         styles: (theme) => styles2(theme, enableColorScheme)
       }), children]
     });
   }
   true ? CssBaseline.propTypes = {
-    children: import_prop_types33.default.node,
-    enableColorScheme: import_prop_types33.default.bool
+    children: import_prop_types37.default.node,
+    enableColorScheme: import_prop_types37.default.bool
   } : void 0;
   var CssBaseline_default = CssBaseline;
 
   // node_modules/@mui/material/Dialog/Dialog.js
-  var React48 = __toESM(require_react());
-  var import_prop_types35 = __toESM(require_prop_types());
+  var React52 = __toESM(require_react());
+  var import_prop_types39 = __toESM(require_prop_types());
 
   // node_modules/@mui/material/Modal/Modal.js
-  var React47 = __toESM(require_react());
-  var import_prop_types34 = __toESM(require_prop_types());
-  var import_jsx_runtime35 = __toESM(require_jsx_runtime());
-  var _excluded29 = ["BackdropComponent", "closeAfterTransition", "children", "components", "componentsProps", "disableAutoFocus", "disableEnforceFocus", "disableEscapeKeyDown", "disablePortal", "disableRestoreFocus", "disableScrollLock", "hideBackdrop", "keepMounted"];
+  var React51 = __toESM(require_react());
+  var import_prop_types38 = __toESM(require_prop_types());
+  var import_jsx_runtime39 = __toESM(require_jsx_runtime());
+  var _excluded34 = ["BackdropComponent", "closeAfterTransition", "children", "components", "componentsProps", "disableAutoFocus", "disableEnforceFocus", "disableEscapeKeyDown", "disablePortal", "disableRestoreFocus", "disableScrollLock", "hideBackdrop", "keepMounted"];
   var extendUtilityClasses = (ownerState) => {
     return ownerState.classes;
   };
@@ -35068,7 +35370,7 @@ const theme2 = createTheme({ palette: {
   })({
     zIndex: -1
   });
-  var Modal = /* @__PURE__ */ React47.forwardRef(function Modal2(inProps, ref) {
+  var Modal = /* @__PURE__ */ React51.forwardRef(function Modal2(inProps, ref) {
     var _componentsProps$root;
     const props = useThemeProps2({
       name: "MuiModal",
@@ -35088,8 +35390,8 @@ const theme2 = createTheme({ palette: {
       disableScrollLock = false,
       hideBackdrop = false,
       keepMounted = false
-    } = props, other = _objectWithoutPropertiesLoose(props, _excluded29);
-    const [exited, setExited] = React47.useState(true);
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded34);
+    const [exited, setExited] = React51.useState(true);
     const commonProps = {
       closeAfterTransition,
       disableAutoFocus,
@@ -35105,7 +35407,7 @@ const theme2 = createTheme({ palette: {
       exited
     });
     const classes = extendUtilityClasses(ownerState);
-    return /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(ModalUnstyled_default, _extends({
+    return /* @__PURE__ */ (0, import_jsx_runtime39.jsx)(ModalUnstyled_default, _extends({
       components: _extends({
         Root: ModalRoot
       }, components),
@@ -35125,30 +35427,30 @@ const theme2 = createTheme({ palette: {
     }));
   });
   true ? Modal.propTypes = {
-    BackdropComponent: import_prop_types34.default.elementType,
-    BackdropProps: import_prop_types34.default.object,
+    BackdropComponent: import_prop_types38.default.elementType,
+    BackdropProps: import_prop_types38.default.object,
     children: elementAcceptingRef_default.isRequired,
-    classes: import_prop_types34.default.object,
-    closeAfterTransition: import_prop_types34.default.bool,
-    components: import_prop_types34.default.shape({
-      Root: import_prop_types34.default.elementType
+    classes: import_prop_types38.default.object,
+    closeAfterTransition: import_prop_types38.default.bool,
+    components: import_prop_types38.default.shape({
+      Root: import_prop_types38.default.elementType
     }),
-    componentsProps: import_prop_types34.default.shape({
-      root: import_prop_types34.default.object
+    componentsProps: import_prop_types38.default.shape({
+      root: import_prop_types38.default.object
     }),
-    container: import_prop_types34.default.oneOfType([HTMLElementType, import_prop_types34.default.func]),
-    disableAutoFocus: import_prop_types34.default.bool,
-    disableEnforceFocus: import_prop_types34.default.bool,
-    disableEscapeKeyDown: import_prop_types34.default.bool,
-    disablePortal: import_prop_types34.default.bool,
-    disableRestoreFocus: import_prop_types34.default.bool,
-    disableScrollLock: import_prop_types34.default.bool,
-    hideBackdrop: import_prop_types34.default.bool,
-    keepMounted: import_prop_types34.default.bool,
-    onBackdropClick: import_prop_types34.default.func,
-    onClose: import_prop_types34.default.func,
-    open: import_prop_types34.default.bool.isRequired,
-    sx: import_prop_types34.default.oneOfType([import_prop_types34.default.arrayOf(import_prop_types34.default.oneOfType([import_prop_types34.default.func, import_prop_types34.default.object, import_prop_types34.default.bool])), import_prop_types34.default.func, import_prop_types34.default.object])
+    container: import_prop_types38.default.oneOfType([HTMLElementType, import_prop_types38.default.func]),
+    disableAutoFocus: import_prop_types38.default.bool,
+    disableEnforceFocus: import_prop_types38.default.bool,
+    disableEscapeKeyDown: import_prop_types38.default.bool,
+    disablePortal: import_prop_types38.default.bool,
+    disableRestoreFocus: import_prop_types38.default.bool,
+    disableScrollLock: import_prop_types38.default.bool,
+    hideBackdrop: import_prop_types38.default.bool,
+    keepMounted: import_prop_types38.default.bool,
+    onBackdropClick: import_prop_types38.default.func,
+    onClose: import_prop_types38.default.func,
+    open: import_prop_types38.default.bool.isRequired,
+    sx: import_prop_types38.default.oneOfType([import_prop_types38.default.arrayOf(import_prop_types38.default.oneOfType([import_prop_types38.default.func, import_prop_types38.default.object, import_prop_types38.default.bool])), import_prop_types38.default.func, import_prop_types38.default.object])
   } : void 0;
   var Modal_default = Modal;
 
@@ -35168,8 +35470,8 @@ const theme2 = createTheme({ palette: {
   var DialogContext_default = DialogContext;
 
   // node_modules/@mui/material/Dialog/Dialog.js
-  var import_jsx_runtime36 = __toESM(require_jsx_runtime());
-  var _excluded30 = ["aria-describedby", "aria-labelledby", "BackdropComponent", "BackdropProps", "children", "className", "disableEscapeKeyDown", "fullScreen", "fullWidth", "maxWidth", "onBackdropClick", "onClose", "open", "PaperComponent", "PaperProps", "scroll", "TransitionComponent", "transitionDuration", "TransitionProps"];
+  var import_jsx_runtime40 = __toESM(require_jsx_runtime());
+  var _excluded35 = ["aria-describedby", "aria-labelledby", "BackdropComponent", "BackdropProps", "children", "className", "disableEscapeKeyDown", "fullScreen", "fullWidth", "maxWidth", "onBackdropClick", "onClose", "open", "PaperComponent", "PaperProps", "scroll", "TransitionComponent", "transitionDuration", "TransitionProps"];
   var DialogBackdrop = styled_default(Backdrop_default, {
     name: "MuiDialog",
     slot: "Backdrop",
@@ -35177,7 +35479,7 @@ const theme2 = createTheme({ palette: {
   })({
     zIndex: -1
   });
-  var useUtilityClasses14 = (ownerState) => {
+  var useUtilityClasses18 = (ownerState) => {
     const {
       classes,
       scroll,
@@ -35292,7 +35594,7 @@ const theme2 = createTheme({ palette: {
       maxWidth: "100%"
     }
   }));
-  var Dialog = /* @__PURE__ */ React48.forwardRef(function Dialog2(inProps, ref) {
+  var Dialog = /* @__PURE__ */ React52.forwardRef(function Dialog2(inProps, ref) {
     const props = useThemeProps2({
       props: inProps,
       name: "MuiDialog"
@@ -35322,7 +35624,7 @@ const theme2 = createTheme({ palette: {
       TransitionComponent = Fade_default,
       transitionDuration = defaultTransitionDuration,
       TransitionProps
-    } = props, other = _objectWithoutPropertiesLoose(props, _excluded30);
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded35);
     const ownerState = _extends({}, props, {
       disableEscapeKeyDown,
       fullScreen,
@@ -35330,8 +35632,8 @@ const theme2 = createTheme({ palette: {
       maxWidth: maxWidth2,
       scroll
     });
-    const classes = useUtilityClasses14(ownerState);
-    const backdropClick = React48.useRef();
+    const classes = useUtilityClasses18(ownerState);
+    const backdropClick = React52.useRef();
     const handleMouseDown = (event) => {
       backdropClick.current = event.target === event.currentTarget;
     };
@@ -35348,12 +35650,12 @@ const theme2 = createTheme({ palette: {
       }
     };
     const ariaLabelledby = useId2(ariaLabelledbyProp);
-    const dialogContextValue = React48.useMemo(() => {
+    const dialogContextValue = React52.useMemo(() => {
       return {
         titleId: ariaLabelledby
       };
     }, [ariaLabelledby]);
-    return /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(DialogRoot, _extends({
+    return /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(DialogRoot, _extends({
       className: clsx_m_default(classes.root, className),
       BackdropProps: _extends({
         transitionDuration,
@@ -35368,17 +35670,17 @@ const theme2 = createTheme({ palette: {
       onClick: handleBackdropClick,
       ownerState
     }, other, {
-      children: /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(TransitionComponent, _extends({
+      children: /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(TransitionComponent, _extends({
         appear: true,
         in: open,
         timeout: transitionDuration,
         role: "presentation"
       }, TransitionProps, {
-        children: /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(DialogContainer, {
+        children: /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(DialogContainer, {
           className: clsx_m_default(classes.container),
           onMouseDown: handleMouseDown,
           ownerState,
-          children: /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(DialogPaper, _extends({
+          children: /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(DialogPaper, _extends({
             as: PaperComponent,
             elevation: 24,
             role: "dialog",
@@ -35387,7 +35689,7 @@ const theme2 = createTheme({ palette: {
           }, PaperProps, {
             className: clsx_m_default(classes.paper, PaperProps.className),
             ownerState,
-            children: /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(DialogContext_default.Provider, {
+            children: /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(DialogContext_default.Provider, {
               value: dialogContextValue,
               children
             })
@@ -35397,37 +35699,37 @@ const theme2 = createTheme({ palette: {
     }));
   });
   true ? Dialog.propTypes = {
-    "aria-describedby": import_prop_types35.default.string,
-    "aria-labelledby": import_prop_types35.default.string,
-    BackdropComponent: import_prop_types35.default.elementType,
-    BackdropProps: import_prop_types35.default.object,
-    children: import_prop_types35.default.node,
-    classes: import_prop_types35.default.object,
-    className: import_prop_types35.default.string,
-    disableEscapeKeyDown: import_prop_types35.default.bool,
-    fullScreen: import_prop_types35.default.bool,
-    fullWidth: import_prop_types35.default.bool,
-    maxWidth: import_prop_types35.default.oneOfType([import_prop_types35.default.oneOf(["xs", "sm", "md", "lg", "xl", false]), import_prop_types35.default.string]),
-    onBackdropClick: import_prop_types35.default.func,
-    onClose: import_prop_types35.default.func,
-    open: import_prop_types35.default.bool.isRequired,
-    PaperComponent: import_prop_types35.default.elementType,
-    PaperProps: import_prop_types35.default.object,
-    scroll: import_prop_types35.default.oneOf(["body", "paper"]),
-    sx: import_prop_types35.default.oneOfType([import_prop_types35.default.arrayOf(import_prop_types35.default.oneOfType([import_prop_types35.default.func, import_prop_types35.default.object, import_prop_types35.default.bool])), import_prop_types35.default.func, import_prop_types35.default.object]),
-    TransitionComponent: import_prop_types35.default.elementType,
-    transitionDuration: import_prop_types35.default.oneOfType([import_prop_types35.default.number, import_prop_types35.default.shape({
-      appear: import_prop_types35.default.number,
-      enter: import_prop_types35.default.number,
-      exit: import_prop_types35.default.number
+    "aria-describedby": import_prop_types39.default.string,
+    "aria-labelledby": import_prop_types39.default.string,
+    BackdropComponent: import_prop_types39.default.elementType,
+    BackdropProps: import_prop_types39.default.object,
+    children: import_prop_types39.default.node,
+    classes: import_prop_types39.default.object,
+    className: import_prop_types39.default.string,
+    disableEscapeKeyDown: import_prop_types39.default.bool,
+    fullScreen: import_prop_types39.default.bool,
+    fullWidth: import_prop_types39.default.bool,
+    maxWidth: import_prop_types39.default.oneOfType([import_prop_types39.default.oneOf(["xs", "sm", "md", "lg", "xl", false]), import_prop_types39.default.string]),
+    onBackdropClick: import_prop_types39.default.func,
+    onClose: import_prop_types39.default.func,
+    open: import_prop_types39.default.bool.isRequired,
+    PaperComponent: import_prop_types39.default.elementType,
+    PaperProps: import_prop_types39.default.object,
+    scroll: import_prop_types39.default.oneOf(["body", "paper"]),
+    sx: import_prop_types39.default.oneOfType([import_prop_types39.default.arrayOf(import_prop_types39.default.oneOfType([import_prop_types39.default.func, import_prop_types39.default.object, import_prop_types39.default.bool])), import_prop_types39.default.func, import_prop_types39.default.object]),
+    TransitionComponent: import_prop_types39.default.elementType,
+    transitionDuration: import_prop_types39.default.oneOfType([import_prop_types39.default.number, import_prop_types39.default.shape({
+      appear: import_prop_types39.default.number,
+      enter: import_prop_types39.default.number,
+      exit: import_prop_types39.default.number
     })]),
-    TransitionProps: import_prop_types35.default.object
+    TransitionProps: import_prop_types39.default.object
   } : void 0;
   var Dialog_default = Dialog;
 
   // node_modules/@mui/material/DialogActions/DialogActions.js
-  var React49 = __toESM(require_react());
-  var import_prop_types36 = __toESM(require_prop_types());
+  var React53 = __toESM(require_react());
+  var import_prop_types40 = __toESM(require_prop_types());
 
   // node_modules/@mui/material/DialogActions/dialogActionsClasses.js
   function getDialogActionsUtilityClass(slot) {
@@ -35436,9 +35738,9 @@ const theme2 = createTheme({ palette: {
   var dialogActionsClasses = generateUtilityClasses("MuiDialogActions", ["root", "spacing"]);
 
   // node_modules/@mui/material/DialogActions/DialogActions.js
-  var import_jsx_runtime37 = __toESM(require_jsx_runtime());
-  var _excluded31 = ["className", "disableSpacing"];
-  var useUtilityClasses15 = (ownerState) => {
+  var import_jsx_runtime41 = __toESM(require_jsx_runtime());
+  var _excluded36 = ["className", "disableSpacing"];
+  var useUtilityClasses19 = (ownerState) => {
     const {
       classes,
       disableSpacing
@@ -35470,7 +35772,7 @@ const theme2 = createTheme({ palette: {
       marginLeft: 8
     }
   }));
-  var DialogActions = /* @__PURE__ */ React49.forwardRef(function DialogActions2(inProps, ref) {
+  var DialogActions = /* @__PURE__ */ React53.forwardRef(function DialogActions2(inProps, ref) {
     const props = useThemeProps2({
       props: inProps,
       name: "MuiDialogActions"
@@ -35478,29 +35780,29 @@ const theme2 = createTheme({ palette: {
     const {
       className,
       disableSpacing = false
-    } = props, other = _objectWithoutPropertiesLoose(props, _excluded31);
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded36);
     const ownerState = _extends({}, props, {
       disableSpacing
     });
-    const classes = useUtilityClasses15(ownerState);
-    return /* @__PURE__ */ (0, import_jsx_runtime37.jsx)(DialogActionsRoot, _extends({
+    const classes = useUtilityClasses19(ownerState);
+    return /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(DialogActionsRoot, _extends({
       className: clsx_m_default(classes.root, className),
       ownerState,
       ref
     }, other));
   });
   true ? DialogActions.propTypes = {
-    children: import_prop_types36.default.node,
-    classes: import_prop_types36.default.object,
-    className: import_prop_types36.default.string,
-    disableSpacing: import_prop_types36.default.bool,
-    sx: import_prop_types36.default.oneOfType([import_prop_types36.default.arrayOf(import_prop_types36.default.oneOfType([import_prop_types36.default.func, import_prop_types36.default.object, import_prop_types36.default.bool])), import_prop_types36.default.func, import_prop_types36.default.object])
+    children: import_prop_types40.default.node,
+    classes: import_prop_types40.default.object,
+    className: import_prop_types40.default.string,
+    disableSpacing: import_prop_types40.default.bool,
+    sx: import_prop_types40.default.oneOfType([import_prop_types40.default.arrayOf(import_prop_types40.default.oneOfType([import_prop_types40.default.func, import_prop_types40.default.object, import_prop_types40.default.bool])), import_prop_types40.default.func, import_prop_types40.default.object])
   } : void 0;
   var DialogActions_default = DialogActions;
 
   // node_modules/@mui/material/DialogContent/DialogContent.js
-  var React50 = __toESM(require_react());
-  var import_prop_types37 = __toESM(require_prop_types());
+  var React54 = __toESM(require_react());
+  var import_prop_types41 = __toESM(require_prop_types());
 
   // node_modules/@mui/material/DialogContent/dialogContentClasses.js
   function getDialogContentUtilityClass(slot) {
@@ -35516,9 +35818,9 @@ const theme2 = createTheme({ palette: {
   var dialogTitleClasses_default = dialogTitleClasses;
 
   // node_modules/@mui/material/DialogContent/DialogContent.js
-  var import_jsx_runtime38 = __toESM(require_jsx_runtime());
-  var _excluded33 = ["className", "dividers"];
-  var useUtilityClasses16 = (ownerState) => {
+  var import_jsx_runtime42 = __toESM(require_jsx_runtime());
+  var _excluded37 = ["className", "dividers"];
+  var useUtilityClasses20 = (ownerState) => {
     const {
       classes,
       dividers
@@ -35554,7 +35856,7 @@ const theme2 = createTheme({ palette: {
       paddingTop: 0
     }
   }));
-  var DialogContent = /* @__PURE__ */ React50.forwardRef(function DialogContent2(inProps, ref) {
+  var DialogContent = /* @__PURE__ */ React54.forwardRef(function DialogContent2(inProps, ref) {
     const props = useThemeProps2({
       props: inProps,
       name: "MuiDialogContent"
@@ -35562,32 +35864,32 @@ const theme2 = createTheme({ palette: {
     const {
       className,
       dividers = false
-    } = props, other = _objectWithoutPropertiesLoose(props, _excluded33);
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded37);
     const ownerState = _extends({}, props, {
       dividers
     });
-    const classes = useUtilityClasses16(ownerState);
-    return /* @__PURE__ */ (0, import_jsx_runtime38.jsx)(DialogContentRoot, _extends({
+    const classes = useUtilityClasses20(ownerState);
+    return /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(DialogContentRoot, _extends({
       className: clsx_m_default(classes.root, className),
       ownerState,
       ref
     }, other));
   });
   true ? DialogContent.propTypes = {
-    children: import_prop_types37.default.node,
-    classes: import_prop_types37.default.object,
-    className: import_prop_types37.default.string,
-    dividers: import_prop_types37.default.bool,
-    sx: import_prop_types37.default.oneOfType([import_prop_types37.default.arrayOf(import_prop_types37.default.oneOfType([import_prop_types37.default.func, import_prop_types37.default.object, import_prop_types37.default.bool])), import_prop_types37.default.func, import_prop_types37.default.object])
+    children: import_prop_types41.default.node,
+    classes: import_prop_types41.default.object,
+    className: import_prop_types41.default.string,
+    dividers: import_prop_types41.default.bool,
+    sx: import_prop_types41.default.oneOfType([import_prop_types41.default.arrayOf(import_prop_types41.default.oneOfType([import_prop_types41.default.func, import_prop_types41.default.object, import_prop_types41.default.bool])), import_prop_types41.default.func, import_prop_types41.default.object])
   } : void 0;
   var DialogContent_default = DialogContent;
 
   // node_modules/@mui/material/DialogTitle/DialogTitle.js
-  var React51 = __toESM(require_react());
-  var import_prop_types38 = __toESM(require_prop_types());
-  var import_jsx_runtime39 = __toESM(require_jsx_runtime());
-  var _excluded34 = ["className", "id"];
-  var useUtilityClasses17 = (ownerState) => {
+  var React55 = __toESM(require_react());
+  var import_prop_types42 = __toESM(require_prop_types());
+  var import_jsx_runtime43 = __toESM(require_jsx_runtime());
+  var _excluded38 = ["className", "id"];
+  var useUtilityClasses21 = (ownerState) => {
     const {
       classes
     } = ownerState;
@@ -35604,7 +35906,7 @@ const theme2 = createTheme({ palette: {
     padding: "16px 24px",
     flex: "0 0 auto"
   });
-  var DialogTitle = /* @__PURE__ */ React51.forwardRef(function DialogTitle2(inProps, ref) {
+  var DialogTitle = /* @__PURE__ */ React55.forwardRef(function DialogTitle2(inProps, ref) {
     const props = useThemeProps2({
       props: inProps,
       name: "MuiDialogTitle"
@@ -35612,13 +35914,13 @@ const theme2 = createTheme({ palette: {
     const {
       className,
       id: idProp
-    } = props, other = _objectWithoutPropertiesLoose(props, _excluded34);
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded38);
     const ownerState = props;
-    const classes = useUtilityClasses17(ownerState);
+    const classes = useUtilityClasses21(ownerState);
     const {
       titleId: id = idProp
-    } = React51.useContext(DialogContext_default);
-    return /* @__PURE__ */ (0, import_jsx_runtime39.jsx)(DialogTitleRoot, _extends({
+    } = React55.useContext(DialogContext_default);
+    return /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(DialogTitleRoot, _extends({
       component: "h2",
       className: clsx_m_default(classes.root, className),
       ownerState,
@@ -35628,17 +35930,17 @@ const theme2 = createTheme({ palette: {
     }, other));
   });
   true ? DialogTitle.propTypes = {
-    children: import_prop_types38.default.node,
-    classes: import_prop_types38.default.object,
-    className: import_prop_types38.default.string,
-    id: import_prop_types38.default.string,
-    sx: import_prop_types38.default.oneOfType([import_prop_types38.default.arrayOf(import_prop_types38.default.oneOfType([import_prop_types38.default.func, import_prop_types38.default.object, import_prop_types38.default.bool])), import_prop_types38.default.func, import_prop_types38.default.object])
+    children: import_prop_types42.default.node,
+    classes: import_prop_types42.default.object,
+    className: import_prop_types42.default.string,
+    id: import_prop_types42.default.string,
+    sx: import_prop_types42.default.oneOfType([import_prop_types42.default.arrayOf(import_prop_types42.default.oneOfType([import_prop_types42.default.func, import_prop_types42.default.object, import_prop_types42.default.bool])), import_prop_types42.default.func, import_prop_types42.default.object])
   } : void 0;
   var DialogTitle_default = DialogTitle;
 
   // node_modules/@mui/material/Divider/Divider.js
-  var React52 = __toESM(require_react());
-  var import_prop_types39 = __toESM(require_prop_types());
+  var React56 = __toESM(require_react());
+  var import_prop_types43 = __toESM(require_prop_types());
 
   // node_modules/@mui/material/Divider/dividerClasses.js
   function getDividerUtilityClass(slot) {
@@ -35647,9 +35949,9 @@ const theme2 = createTheme({ palette: {
   var dividerClasses = generateUtilityClasses("MuiDivider", ["root", "absolute", "fullWidth", "inset", "middle", "flexItem", "light", "vertical", "withChildren", "withChildrenVertical", "textAlignRight", "textAlignLeft", "wrapper", "wrapperVertical"]);
 
   // node_modules/@mui/material/Divider/Divider.js
-  var import_jsx_runtime40 = __toESM(require_jsx_runtime());
-  var _excluded35 = ["absolute", "children", "className", "component", "flexItem", "light", "orientation", "role", "textAlign", "variant"];
-  var useUtilityClasses18 = (ownerState) => {
+  var import_jsx_runtime44 = __toESM(require_jsx_runtime());
+  var _excluded39 = ["absolute", "children", "className", "component", "flexItem", "light", "orientation", "role", "textAlign", "variant"];
+  var useUtilityClasses22 = (ownerState) => {
     const {
       absolute,
       children,
@@ -35773,7 +36075,7 @@ const theme2 = createTheme({ palette: {
     paddingTop: `calc(${theme.spacing(1)} * 1.2)`,
     paddingBottom: `calc(${theme.spacing(1)} * 1.2)`
   }));
-  var Divider = /* @__PURE__ */ React52.forwardRef(function Divider2(inProps, ref) {
+  var Divider = /* @__PURE__ */ React56.forwardRef(function Divider2(inProps, ref) {
     const props = useThemeProps2({
       props: inProps,
       name: "MuiDivider"
@@ -35789,7 +36091,7 @@ const theme2 = createTheme({ palette: {
       role = component !== "hr" ? "separator" : void 0,
       textAlign: textAlign2 = "center",
       variant = "fullWidth"
-    } = props, other = _objectWithoutPropertiesLoose(props, _excluded35);
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded39);
     const ownerState = _extends({}, props, {
       absolute,
       component,
@@ -35800,15 +36102,15 @@ const theme2 = createTheme({ palette: {
       textAlign: textAlign2,
       variant
     });
-    const classes = useUtilityClasses18(ownerState);
-    return /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(DividerRoot, _extends({
+    const classes = useUtilityClasses22(ownerState);
+    return /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(DividerRoot, _extends({
       as: component,
       className: clsx_m_default(classes.root, className),
       role,
       ref,
       ownerState
     }, other, {
-      children: children ? /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(DividerWrapper, {
+      children: children ? /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(DividerWrapper, {
         className: classes.wrapper,
         ownerState,
         children
@@ -35816,28 +36118,28 @@ const theme2 = createTheme({ palette: {
     }));
   });
   true ? Divider.propTypes = {
-    absolute: import_prop_types39.default.bool,
-    children: import_prop_types39.default.node,
-    classes: import_prop_types39.default.object,
-    className: import_prop_types39.default.string,
-    component: import_prop_types39.default.elementType,
-    flexItem: import_prop_types39.default.bool,
-    light: import_prop_types39.default.bool,
-    orientation: import_prop_types39.default.oneOf(["horizontal", "vertical"]),
-    role: import_prop_types39.default.string,
-    sx: import_prop_types39.default.oneOfType([import_prop_types39.default.arrayOf(import_prop_types39.default.oneOfType([import_prop_types39.default.func, import_prop_types39.default.object, import_prop_types39.default.bool])), import_prop_types39.default.func, import_prop_types39.default.object]),
-    textAlign: import_prop_types39.default.oneOf(["center", "left", "right"]),
-    variant: import_prop_types39.default.oneOfType([import_prop_types39.default.oneOf(["fullWidth", "inset", "middle"]), import_prop_types39.default.string])
+    absolute: import_prop_types43.default.bool,
+    children: import_prop_types43.default.node,
+    classes: import_prop_types43.default.object,
+    className: import_prop_types43.default.string,
+    component: import_prop_types43.default.elementType,
+    flexItem: import_prop_types43.default.bool,
+    light: import_prop_types43.default.bool,
+    orientation: import_prop_types43.default.oneOf(["horizontal", "vertical"]),
+    role: import_prop_types43.default.string,
+    sx: import_prop_types43.default.oneOfType([import_prop_types43.default.arrayOf(import_prop_types43.default.oneOfType([import_prop_types43.default.func, import_prop_types43.default.object, import_prop_types43.default.bool])), import_prop_types43.default.func, import_prop_types43.default.object]),
+    textAlign: import_prop_types43.default.oneOf(["center", "left", "right"]),
+    variant: import_prop_types43.default.oneOfType([import_prop_types43.default.oneOf(["fullWidth", "inset", "middle"]), import_prop_types43.default.string])
   } : void 0;
   var Divider_default = Divider;
 
   // node_modules/@mui/material/Grid/Grid.js
-  var React54 = __toESM(require_react());
-  var import_prop_types40 = __toESM(require_prop_types());
+  var React58 = __toESM(require_react());
+  var import_prop_types44 = __toESM(require_prop_types());
 
   // node_modules/@mui/material/Grid/GridContext.js
-  var React53 = __toESM(require_react());
-  var GridContext = /* @__PURE__ */ React53.createContext();
+  var React57 = __toESM(require_react());
+  var GridContext = /* @__PURE__ */ React57.createContext();
   if (true) {
     GridContext.displayName = "GridContext";
   }
@@ -35868,8 +36170,8 @@ const theme2 = createTheme({ palette: {
   var gridClasses_default = gridClasses;
 
   // node_modules/@mui/material/Grid/Grid.js
-  var import_jsx_runtime41 = __toESM(require_jsx_runtime());
-  var _excluded36 = ["className", "columns", "columnSpacing", "component", "container", "direction", "item", "lg", "md", "rowSpacing", "sm", "spacing", "wrap", "xl", "xs", "zeroMinWidth"];
+  var import_jsx_runtime45 = __toESM(require_jsx_runtime());
+  var _excluded40 = ["className", "columns", "columnSpacing", "component", "container", "direction", "item", "lg", "md", "rowSpacing", "sm", "spacing", "wrap", "xl", "xs", "zeroMinWidth"];
   function getOffset(val) {
     const parse2 = parseFloat(val);
     return `${parse2}${String(val).replace(String(parse2), "") || "px"}`;
@@ -36071,7 +36373,7 @@ const theme2 = createTheme({ palette: {
   }, ownerState.wrap !== "wrap" && {
     flexWrap: ownerState.wrap
   }), generateDirection, generateRowGap, generateColumnGap, generateGrid);
-  var useUtilityClasses19 = (ownerState) => {
+  var useUtilityClasses23 = (ownerState) => {
     const {
       classes,
       container,
@@ -36091,7 +36393,7 @@ const theme2 = createTheme({ palette: {
     };
     return composeClasses(slots, getGridUtilityClass, classes);
   };
-  var Grid = /* @__PURE__ */ React54.forwardRef(function Grid2(inProps, ref) {
+  var Grid = /* @__PURE__ */ React58.forwardRef(function Grid2(inProps, ref) {
     const themeProps = useThemeProps2({
       props: inProps,
       name: "MuiGrid"
@@ -36114,10 +36416,10 @@ const theme2 = createTheme({ palette: {
       xl = false,
       xs = false,
       zeroMinWidth = false
-    } = props, other = _objectWithoutPropertiesLoose(props, _excluded36);
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded40);
     const rowSpacing = rowSpacingProp || spacing2;
     const columnSpacing = columnSpacingProp || spacing2;
-    const columnsContext = React54.useContext(GridContext_default);
+    const columnsContext = React58.useContext(GridContext_default);
     const columns = container ? columnsProp || 12 : columnsContext;
     const ownerState = _extends({}, props, {
       columns,
@@ -36134,10 +36436,10 @@ const theme2 = createTheme({ palette: {
       xs,
       zeroMinWidth
     });
-    const classes = useUtilityClasses19(ownerState);
-    return /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(GridContext_default.Provider, {
+    const classes = useUtilityClasses23(ownerState);
+    return /* @__PURE__ */ (0, import_jsx_runtime45.jsx)(GridContext_default.Provider, {
       value: columns,
-      children: /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(GridRoot, _extends({
+      children: /* @__PURE__ */ (0, import_jsx_runtime45.jsx)(GridRoot, _extends({
         ownerState,
         className: clsx_m_default(classes.root, className),
         as: component,
@@ -36146,25 +36448,25 @@ const theme2 = createTheme({ palette: {
     });
   });
   true ? Grid.propTypes = {
-    children: import_prop_types40.default.node,
-    classes: import_prop_types40.default.object,
-    className: import_prop_types40.default.string,
-    columns: import_prop_types40.default.oneOfType([import_prop_types40.default.arrayOf(import_prop_types40.default.number), import_prop_types40.default.number, import_prop_types40.default.object]),
-    columnSpacing: import_prop_types40.default.oneOfType([import_prop_types40.default.arrayOf(import_prop_types40.default.oneOfType([import_prop_types40.default.number, import_prop_types40.default.string])), import_prop_types40.default.number, import_prop_types40.default.object, import_prop_types40.default.string]),
-    component: import_prop_types40.default.elementType,
-    container: import_prop_types40.default.bool,
-    direction: import_prop_types40.default.oneOfType([import_prop_types40.default.oneOf(["column-reverse", "column", "row-reverse", "row"]), import_prop_types40.default.arrayOf(import_prop_types40.default.oneOf(["column-reverse", "column", "row-reverse", "row"])), import_prop_types40.default.object]),
-    item: import_prop_types40.default.bool,
-    lg: import_prop_types40.default.oneOfType([import_prop_types40.default.oneOf(["auto"]), import_prop_types40.default.number, import_prop_types40.default.bool]),
-    md: import_prop_types40.default.oneOfType([import_prop_types40.default.oneOf(["auto"]), import_prop_types40.default.number, import_prop_types40.default.bool]),
-    rowSpacing: import_prop_types40.default.oneOfType([import_prop_types40.default.arrayOf(import_prop_types40.default.oneOfType([import_prop_types40.default.number, import_prop_types40.default.string])), import_prop_types40.default.number, import_prop_types40.default.object, import_prop_types40.default.string]),
-    sm: import_prop_types40.default.oneOfType([import_prop_types40.default.oneOf(["auto"]), import_prop_types40.default.number, import_prop_types40.default.bool]),
-    spacing: import_prop_types40.default.oneOfType([import_prop_types40.default.arrayOf(import_prop_types40.default.oneOfType([import_prop_types40.default.number, import_prop_types40.default.string])), import_prop_types40.default.number, import_prop_types40.default.object, import_prop_types40.default.string]),
-    sx: import_prop_types40.default.oneOfType([import_prop_types40.default.arrayOf(import_prop_types40.default.oneOfType([import_prop_types40.default.func, import_prop_types40.default.object, import_prop_types40.default.bool])), import_prop_types40.default.func, import_prop_types40.default.object]),
-    wrap: import_prop_types40.default.oneOf(["nowrap", "wrap-reverse", "wrap"]),
-    xl: import_prop_types40.default.oneOfType([import_prop_types40.default.oneOf(["auto"]), import_prop_types40.default.number, import_prop_types40.default.bool]),
-    xs: import_prop_types40.default.oneOfType([import_prop_types40.default.oneOf(["auto"]), import_prop_types40.default.number, import_prop_types40.default.bool]),
-    zeroMinWidth: import_prop_types40.default.bool
+    children: import_prop_types44.default.node,
+    classes: import_prop_types44.default.object,
+    className: import_prop_types44.default.string,
+    columns: import_prop_types44.default.oneOfType([import_prop_types44.default.arrayOf(import_prop_types44.default.number), import_prop_types44.default.number, import_prop_types44.default.object]),
+    columnSpacing: import_prop_types44.default.oneOfType([import_prop_types44.default.arrayOf(import_prop_types44.default.oneOfType([import_prop_types44.default.number, import_prop_types44.default.string])), import_prop_types44.default.number, import_prop_types44.default.object, import_prop_types44.default.string]),
+    component: import_prop_types44.default.elementType,
+    container: import_prop_types44.default.bool,
+    direction: import_prop_types44.default.oneOfType([import_prop_types44.default.oneOf(["column-reverse", "column", "row-reverse", "row"]), import_prop_types44.default.arrayOf(import_prop_types44.default.oneOf(["column-reverse", "column", "row-reverse", "row"])), import_prop_types44.default.object]),
+    item: import_prop_types44.default.bool,
+    lg: import_prop_types44.default.oneOfType([import_prop_types44.default.oneOf(["auto"]), import_prop_types44.default.number, import_prop_types44.default.bool]),
+    md: import_prop_types44.default.oneOfType([import_prop_types44.default.oneOf(["auto"]), import_prop_types44.default.number, import_prop_types44.default.bool]),
+    rowSpacing: import_prop_types44.default.oneOfType([import_prop_types44.default.arrayOf(import_prop_types44.default.oneOfType([import_prop_types44.default.number, import_prop_types44.default.string])), import_prop_types44.default.number, import_prop_types44.default.object, import_prop_types44.default.string]),
+    sm: import_prop_types44.default.oneOfType([import_prop_types44.default.oneOf(["auto"]), import_prop_types44.default.number, import_prop_types44.default.bool]),
+    spacing: import_prop_types44.default.oneOfType([import_prop_types44.default.arrayOf(import_prop_types44.default.oneOfType([import_prop_types44.default.number, import_prop_types44.default.string])), import_prop_types44.default.number, import_prop_types44.default.object, import_prop_types44.default.string]),
+    sx: import_prop_types44.default.oneOfType([import_prop_types44.default.arrayOf(import_prop_types44.default.oneOfType([import_prop_types44.default.func, import_prop_types44.default.object, import_prop_types44.default.bool])), import_prop_types44.default.func, import_prop_types44.default.object]),
+    wrap: import_prop_types44.default.oneOf(["nowrap", "wrap-reverse", "wrap"]),
+    xl: import_prop_types44.default.oneOfType([import_prop_types44.default.oneOf(["auto"]), import_prop_types44.default.number, import_prop_types44.default.bool]),
+    xs: import_prop_types44.default.oneOfType([import_prop_types44.default.oneOf(["auto"]), import_prop_types44.default.number, import_prop_types44.default.bool]),
+    zeroMinWidth: import_prop_types44.default.bool
   } : void 0;
   if (true) {
     const requireProp = requirePropFactory_default("Grid", Grid);
@@ -36182,10 +36484,10 @@ const theme2 = createTheme({ palette: {
   var Grid_default = Grid;
 
   // node_modules/@mui/material/Grow/Grow.js
-  var React55 = __toESM(require_react());
-  var import_prop_types41 = __toESM(require_prop_types());
-  var import_jsx_runtime42 = __toESM(require_jsx_runtime());
-  var _excluded37 = ["addEndListener", "appear", "children", "easing", "in", "onEnter", "onEntered", "onEntering", "onExit", "onExited", "onExiting", "style", "timeout", "TransitionComponent"];
+  var React59 = __toESM(require_react());
+  var import_prop_types45 = __toESM(require_prop_types());
+  var import_jsx_runtime46 = __toESM(require_jsx_runtime());
+  var _excluded41 = ["addEndListener", "appear", "children", "easing", "in", "onEnter", "onEntered", "onEntering", "onExit", "onExited", "onExiting", "style", "timeout", "TransitionComponent"];
   function getScale(value) {
     return `scale(${value}, ${__pow(value, 2)})`;
   }
@@ -36200,7 +36502,7 @@ const theme2 = createTheme({ palette: {
     }
   };
   var isWebKit154 = typeof navigator !== "undefined" && /^((?!chrome|android).)*(safari|mobile)/i.test(navigator.userAgent) && /(os |version\/)15(.|_)[4-9]/i.test(navigator.userAgent);
-  var Grow = /* @__PURE__ */ React55.forwardRef(function Grow2(props, ref) {
+  var Grow = /* @__PURE__ */ React59.forwardRef(function Grow2(props, ref) {
     const {
       addEndListener,
       appear = true,
@@ -36216,11 +36518,11 @@ const theme2 = createTheme({ palette: {
       style: style3,
       timeout: timeout2 = "auto",
       TransitionComponent = Transition_default
-    } = props, other = _objectWithoutPropertiesLoose(props, _excluded37);
-    const timer = React55.useRef();
-    const autoTimeout = React55.useRef();
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded41);
+    const timer = React59.useRef();
+    const autoTimeout = React59.useRef();
     const theme = useTheme5();
-    const nodeRef = React55.useRef(null);
+    const nodeRef = React59.useRef(null);
     const foreignRef = useForkRef_default(children.ref, ref);
     const handleRef = useForkRef_default(nodeRef, foreignRef);
     const normalizedTransitionCallback = (callback) => (maybeIsAppearing) => {
@@ -36310,12 +36612,12 @@ const theme2 = createTheme({ palette: {
         addEndListener(nodeRef.current, next2);
       }
     };
-    React55.useEffect(() => {
+    React59.useEffect(() => {
       return () => {
         clearTimeout(timer.current);
       };
     }, []);
-    return /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(TransitionComponent, _extends({
+    return /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(TransitionComponent, _extends({
       appear,
       in: inProp,
       nodeRef,
@@ -36329,7 +36631,7 @@ const theme2 = createTheme({ palette: {
       timeout: timeout2 === "auto" ? null : timeout2
     }, other, {
       children: (state, childProps) => {
-        return /* @__PURE__ */ React55.cloneElement(children, _extends({
+        return /* @__PURE__ */ React59.cloneElement(children, _extends({
           style: _extends({
             opacity: 0,
             transform: getScale(0.75),
@@ -36341,33 +36643,33 @@ const theme2 = createTheme({ palette: {
     }));
   });
   true ? Grow.propTypes = {
-    addEndListener: import_prop_types41.default.func,
-    appear: import_prop_types41.default.bool,
+    addEndListener: import_prop_types45.default.func,
+    appear: import_prop_types45.default.bool,
     children: elementAcceptingRef_default.isRequired,
-    easing: import_prop_types41.default.oneOfType([import_prop_types41.default.shape({
-      enter: import_prop_types41.default.string,
-      exit: import_prop_types41.default.string
-    }), import_prop_types41.default.string]),
-    in: import_prop_types41.default.bool,
-    onEnter: import_prop_types41.default.func,
-    onEntered: import_prop_types41.default.func,
-    onEntering: import_prop_types41.default.func,
-    onExit: import_prop_types41.default.func,
-    onExited: import_prop_types41.default.func,
-    onExiting: import_prop_types41.default.func,
-    style: import_prop_types41.default.object,
-    timeout: import_prop_types41.default.oneOfType([import_prop_types41.default.oneOf(["auto"]), import_prop_types41.default.number, import_prop_types41.default.shape({
-      appear: import_prop_types41.default.number,
-      enter: import_prop_types41.default.number,
-      exit: import_prop_types41.default.number
+    easing: import_prop_types45.default.oneOfType([import_prop_types45.default.shape({
+      enter: import_prop_types45.default.string,
+      exit: import_prop_types45.default.string
+    }), import_prop_types45.default.string]),
+    in: import_prop_types45.default.bool,
+    onEnter: import_prop_types45.default.func,
+    onEntered: import_prop_types45.default.func,
+    onEntering: import_prop_types45.default.func,
+    onExit: import_prop_types45.default.func,
+    onExited: import_prop_types45.default.func,
+    onExiting: import_prop_types45.default.func,
+    style: import_prop_types45.default.object,
+    timeout: import_prop_types45.default.oneOfType([import_prop_types45.default.oneOf(["auto"]), import_prop_types45.default.number, import_prop_types45.default.shape({
+      appear: import_prop_types45.default.number,
+      enter: import_prop_types45.default.number,
+      exit: import_prop_types45.default.number
     })])
   } : void 0;
   Grow.muiSupportAuto = true;
   var Grow_default = Grow;
 
   // node_modules/@mui/material/Tooltip/Tooltip.js
-  var React56 = __toESM(require_react());
-  var import_prop_types42 = __toESM(require_prop_types());
+  var React60 = __toESM(require_react());
+  var import_prop_types46 = __toESM(require_prop_types());
 
   // node_modules/@mui/material/Tooltip/tooltipClasses.js
   function getTooltipUtilityClass(slot) {
@@ -36377,13 +36679,13 @@ const theme2 = createTheme({ palette: {
   var tooltipClasses_default = tooltipClasses;
 
   // node_modules/@mui/material/Tooltip/Tooltip.js
-  var import_jsx_runtime43 = __toESM(require_jsx_runtime());
-  var import_jsx_runtime44 = __toESM(require_jsx_runtime());
-  var _excluded38 = ["arrow", "children", "classes", "components", "componentsProps", "describeChild", "disableFocusListener", "disableHoverListener", "disableInteractive", "disableTouchListener", "enterDelay", "enterNextDelay", "enterTouchDelay", "followCursor", "id", "leaveDelay", "leaveTouchDelay", "onClose", "onOpen", "open", "placement", "PopperComponent", "PopperProps", "title", "TransitionComponent", "TransitionProps"];
+  var import_jsx_runtime47 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime48 = __toESM(require_jsx_runtime());
+  var _excluded42 = ["arrow", "children", "classes", "components", "componentsProps", "describeChild", "disableFocusListener", "disableHoverListener", "disableInteractive", "disableTouchListener", "enterDelay", "enterNextDelay", "enterTouchDelay", "followCursor", "id", "leaveDelay", "leaveTouchDelay", "onClose", "onOpen", "open", "placement", "PopperComponent", "PopperProps", "title", "TransitionComponent", "TransitionProps"];
   function round3(value) {
     return Math.round(value * 1e5) / 1e5;
   }
-  var useUtilityClasses20 = (ownerState) => {
+  var useUtilityClasses24 = (ownerState) => {
     const {
       classes,
       disableInteractive,
@@ -36560,7 +36862,7 @@ const theme2 = createTheme({ palette: {
       handler(event);
     };
   }
-  var Tooltip = /* @__PURE__ */ React56.forwardRef(function Tooltip2(inProps, ref) {
+  var Tooltip = /* @__PURE__ */ React60.forwardRef(function Tooltip2(inProps, ref) {
     var _components$Popper, _ref, _components$Transitio, _components$Tooltip, _components$Arrow, _componentsProps$popp;
     const props = useThemeProps2({
       props: inProps,
@@ -36592,17 +36894,17 @@ const theme2 = createTheme({ palette: {
       title,
       TransitionComponent: TransitionComponentProp = Grow_default,
       TransitionProps
-    } = props, other = _objectWithoutPropertiesLoose(props, _excluded38);
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded42);
     const theme = useTheme5();
     const isRtl = theme.direction === "rtl";
-    const [childNode, setChildNode] = React56.useState();
-    const [arrowRef, setArrowRef] = React56.useState(null);
-    const ignoreNonTouchEvents = React56.useRef(false);
+    const [childNode, setChildNode] = React60.useState();
+    const [arrowRef, setArrowRef] = React60.useState(null);
+    const ignoreNonTouchEvents = React60.useRef(false);
     const disableInteractive = disableInteractiveProp || followCursor;
-    const closeTimer = React56.useRef();
-    const enterTimer = React56.useRef();
-    const leaveTimer = React56.useRef();
-    const touchTimer = React56.useRef();
+    const closeTimer = React60.useRef();
+    const enterTimer = React60.useRef();
+    const leaveTimer = React60.useRef();
+    const touchTimer = React60.useRef();
     const [openState, setOpenState] = useControlled_default({
       controlled: openProp,
       default: false,
@@ -36613,23 +36915,23 @@ const theme2 = createTheme({ palette: {
     if (true) {
       const {
         current: isControlled
-      } = React56.useRef(openProp !== void 0);
-      React56.useEffect(() => {
+      } = React60.useRef(openProp !== void 0);
+      React60.useEffect(() => {
         if (childNode && childNode.disabled && !isControlled && title !== "" && childNode.tagName.toLowerCase() === "button") {
           console.error(["MUI: You are providing a disabled `button` child to the Tooltip component.", "A disabled element does not fire events.", "Tooltip needs to listen to the child element's events to display the title.", "", "Add a simple wrapper element, such as a `span`."].join("\n"));
         }
       }, [title, childNode, isControlled]);
     }
     const id = useId_default(idProp);
-    const prevUserSelect = React56.useRef();
-    const stopTouchInteraction = React56.useCallback(() => {
+    const prevUserSelect = React60.useRef();
+    const stopTouchInteraction = React60.useCallback(() => {
       if (prevUserSelect.current !== void 0) {
         document.body.style.WebkitUserSelect = prevUserSelect.current;
         prevUserSelect.current = void 0;
       }
       clearTimeout(touchTimer.current);
     }, []);
-    React56.useEffect(() => {
+    React60.useEffect(() => {
       return () => {
         clearTimeout(closeTimer.current);
         clearTimeout(enterTimer.current);
@@ -36689,7 +36991,7 @@ const theme2 = createTheme({ palette: {
       onFocus: handleFocusVisible,
       ref: focusVisibleRef
     } = useIsFocusVisible_default();
-    const [, setChildIsFocusVisible] = React56.useState(false);
+    const [, setChildIsFocusVisible] = React60.useState(false);
     const handleBlur = (event) => {
       handleBlurVisible(event);
       if (isFocusVisibleRef.current === false) {
@@ -36738,7 +37040,7 @@ const theme2 = createTheme({ palette: {
         handleClose(event);
       }, leaveTouchDelay);
     };
-    React56.useEffect(() => {
+    React60.useEffect(() => {
       if (!open) {
         return void 0;
       }
@@ -36758,11 +37060,11 @@ const theme2 = createTheme({ palette: {
     if (title === "") {
       open = false;
     }
-    const positionRef = React56.useRef({
+    const positionRef = React60.useRef({
       x: 0,
       y: 0
     });
-    const popperRef = React56.useRef();
+    const popperRef = React60.useRef();
     const handleMouseMove = (event) => {
       const childrenProps2 = children.props;
       if (childrenProps2.onMouseMove) {
@@ -36794,7 +37096,7 @@ const theme2 = createTheme({ palette: {
     } : {});
     if (true) {
       childrenProps["data-mui-internal-clone-element"] = true;
-      React56.useEffect(() => {
+      React60.useEffect(() => {
         if (childNode && !childNode.getAttribute("data-mui-internal-clone-element")) {
           console.error(["MUI: The `children` component of the Tooltip is not forwarding its props correctly.", "Please make sure that props are spread on the same element that the ref is applied to."].join("\n"));
         }
@@ -36826,7 +37128,7 @@ const theme2 = createTheme({ palette: {
         console.error(["MUI: You have provided a `title` prop to the child of <Tooltip />.", `Remove this title prop \`${children.props.title}\` or the Tooltip component.`].join("\n"));
       }
     }
-    const popperOptions = React56.useMemo(() => {
+    const popperOptions = React60.useMemo(() => {
       var _PopperProps$popperOp;
       let tooltipModifiers = [{
         name: "arrow",
@@ -36851,7 +37153,7 @@ const theme2 = createTheme({ palette: {
       PopperComponentProp,
       touch: ignoreNonTouchEvents.current
     });
-    const classes = useUtilityClasses20(ownerState);
+    const classes = useUtilityClasses24(ownerState);
     const PopperComponent = (_components$Popper = components.Popper) != null ? _components$Popper : TooltipPopper;
     const TransitionComponent = (_ref = (_components$Transitio = components.Transition) != null ? _components$Transitio : TransitionComponentProp) != null ? _ref : Grow_default;
     const TooltipComponent = (_components$Tooltip = components.Tooltip) != null ? _components$Tooltip : TooltipTooltip;
@@ -36860,8 +37162,8 @@ const theme2 = createTheme({ palette: {
     const transitionProps = appendOwnerState(TransitionComponent, _extends({}, TransitionProps, componentsProps.transition), ownerState);
     const tooltipProps = appendOwnerState(TooltipComponent, _extends({}, componentsProps.tooltip), ownerState);
     const tooltipArrowProps = appendOwnerState(ArrowComponent, _extends({}, componentsProps.arrow), ownerState);
-    return /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)(React56.Fragment, {
-      children: [/* @__PURE__ */ React56.cloneElement(children, childrenProps), /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(PopperComponent, _extends({
+    return /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)(React60.Fragment, {
+      children: [/* @__PURE__ */ React60.cloneElement(children, childrenProps), /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(PopperComponent, _extends({
         as: PopperComponentProp != null ? PopperComponentProp : Popper_default,
         placement,
         anchorEl: followCursor ? {
@@ -36885,12 +37187,12 @@ const theme2 = createTheme({ palette: {
           TransitionProps: TransitionPropsInner
         }) => {
           var _componentsProps$tool, _componentsProps$arro;
-          return /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(TransitionComponent, _extends({
+          return /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(TransitionComponent, _extends({
             timeout: theme.transitions.duration.shorter
           }, TransitionPropsInner, transitionProps, {
-            children: /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)(TooltipComponent, _extends({}, tooltipProps, {
+            children: /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)(TooltipComponent, _extends({}, tooltipProps, {
               className: clsx_m_default(classes.tooltip, (_componentsProps$tool = componentsProps.tooltip) == null ? void 0 : _componentsProps$tool.className),
-              children: [title, arrow2 ? /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(ArrowComponent, _extends({}, tooltipArrowProps, {
+              children: [title, arrow2 ? /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(ArrowComponent, _extends({}, tooltipArrowProps, {
                 className: clsx_m_default(classes.arrow, (_componentsProps$arro = componentsProps.arrow) == null ? void 0 : _componentsProps$arro.className),
                 ref: setArrowRef
               })) : null]
@@ -36901,50 +37203,50 @@ const theme2 = createTheme({ palette: {
     });
   });
   true ? Tooltip.propTypes = {
-    arrow: import_prop_types42.default.bool,
+    arrow: import_prop_types46.default.bool,
     children: elementAcceptingRef_default.isRequired,
-    classes: import_prop_types42.default.object,
-    className: import_prop_types42.default.string,
-    components: import_prop_types42.default.shape({
-      Arrow: import_prop_types42.default.elementType,
-      Popper: import_prop_types42.default.elementType,
-      Tooltip: import_prop_types42.default.elementType,
-      Transition: import_prop_types42.default.elementType
+    classes: import_prop_types46.default.object,
+    className: import_prop_types46.default.string,
+    components: import_prop_types46.default.shape({
+      Arrow: import_prop_types46.default.elementType,
+      Popper: import_prop_types46.default.elementType,
+      Tooltip: import_prop_types46.default.elementType,
+      Transition: import_prop_types46.default.elementType
     }),
-    componentsProps: import_prop_types42.default.shape({
-      arrow: import_prop_types42.default.object,
-      popper: import_prop_types42.default.object,
-      tooltip: import_prop_types42.default.object,
-      transition: import_prop_types42.default.object
+    componentsProps: import_prop_types46.default.shape({
+      arrow: import_prop_types46.default.object,
+      popper: import_prop_types46.default.object,
+      tooltip: import_prop_types46.default.object,
+      transition: import_prop_types46.default.object
     }),
-    describeChild: import_prop_types42.default.bool,
-    disableFocusListener: import_prop_types42.default.bool,
-    disableHoverListener: import_prop_types42.default.bool,
-    disableInteractive: import_prop_types42.default.bool,
-    disableTouchListener: import_prop_types42.default.bool,
-    enterDelay: import_prop_types42.default.number,
-    enterNextDelay: import_prop_types42.default.number,
-    enterTouchDelay: import_prop_types42.default.number,
-    followCursor: import_prop_types42.default.bool,
-    id: import_prop_types42.default.string,
-    leaveDelay: import_prop_types42.default.number,
-    leaveTouchDelay: import_prop_types42.default.number,
-    onClose: import_prop_types42.default.func,
-    onOpen: import_prop_types42.default.func,
-    open: import_prop_types42.default.bool,
-    placement: import_prop_types42.default.oneOf(["bottom-end", "bottom-start", "bottom", "left-end", "left-start", "left", "right-end", "right-start", "right", "top-end", "top-start", "top"]),
-    PopperComponent: import_prop_types42.default.elementType,
-    PopperProps: import_prop_types42.default.object,
-    sx: import_prop_types42.default.oneOfType([import_prop_types42.default.arrayOf(import_prop_types42.default.oneOfType([import_prop_types42.default.func, import_prop_types42.default.object, import_prop_types42.default.bool])), import_prop_types42.default.func, import_prop_types42.default.object]),
-    title: import_prop_types42.default.node.isRequired,
-    TransitionComponent: import_prop_types42.default.elementType,
-    TransitionProps: import_prop_types42.default.object
+    describeChild: import_prop_types46.default.bool,
+    disableFocusListener: import_prop_types46.default.bool,
+    disableHoverListener: import_prop_types46.default.bool,
+    disableInteractive: import_prop_types46.default.bool,
+    disableTouchListener: import_prop_types46.default.bool,
+    enterDelay: import_prop_types46.default.number,
+    enterNextDelay: import_prop_types46.default.number,
+    enterTouchDelay: import_prop_types46.default.number,
+    followCursor: import_prop_types46.default.bool,
+    id: import_prop_types46.default.string,
+    leaveDelay: import_prop_types46.default.number,
+    leaveTouchDelay: import_prop_types46.default.number,
+    onClose: import_prop_types46.default.func,
+    onOpen: import_prop_types46.default.func,
+    open: import_prop_types46.default.bool,
+    placement: import_prop_types46.default.oneOf(["bottom-end", "bottom-start", "bottom", "left-end", "left-start", "left", "right-end", "right-start", "right", "top-end", "top-start", "top"]),
+    PopperComponent: import_prop_types46.default.elementType,
+    PopperProps: import_prop_types46.default.object,
+    sx: import_prop_types46.default.oneOfType([import_prop_types46.default.arrayOf(import_prop_types46.default.oneOfType([import_prop_types46.default.func, import_prop_types46.default.object, import_prop_types46.default.bool])), import_prop_types46.default.func, import_prop_types46.default.object]),
+    title: import_prop_types46.default.node.isRequired,
+    TransitionComponent: import_prop_types46.default.elementType,
+    TransitionProps: import_prop_types46.default.object
   } : void 0;
   var Tooltip_default = Tooltip;
 
   // node_modules/@mui/material/Switch/Switch.js
-  var React57 = __toESM(require_react());
-  var import_prop_types43 = __toESM(require_prop_types());
+  var React61 = __toESM(require_react());
+  var import_prop_types47 = __toESM(require_prop_types());
 
   // node_modules/@mui/material/Switch/switchClasses.js
   function getSwitchUtilityClass(slot) {
@@ -36954,10 +37256,10 @@ const theme2 = createTheme({ palette: {
   var switchClasses_default = switchClasses;
 
   // node_modules/@mui/material/Switch/Switch.js
-  var import_jsx_runtime45 = __toESM(require_jsx_runtime());
-  var import_jsx_runtime46 = __toESM(require_jsx_runtime());
-  var _excluded39 = ["className", "color", "edge", "size", "sx"];
-  var useUtilityClasses21 = (ownerState) => {
+  var import_jsx_runtime49 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime50 = __toESM(require_jsx_runtime());
+  var _excluded43 = ["className", "color", "edge", "size", "sx"];
+  var useUtilityClasses25 = (ownerState) => {
     const {
       classes,
       edge,
@@ -37115,7 +37417,7 @@ const theme2 = createTheme({ palette: {
     height: 20,
     borderRadius: "50%"
   }));
-  var Switch = /* @__PURE__ */ React57.forwardRef(function Switch2(inProps, ref) {
+  var Switch = /* @__PURE__ */ React61.forwardRef(function Switch2(inProps, ref) {
     const props = useThemeProps2({
       props: inProps,
       name: "MuiSwitch"
@@ -37126,22 +37428,22 @@ const theme2 = createTheme({ palette: {
       edge = false,
       size = "medium",
       sx
-    } = props, other = _objectWithoutPropertiesLoose(props, _excluded39);
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded43);
     const ownerState = _extends({}, props, {
       color: color2,
       edge,
       size
     });
-    const classes = useUtilityClasses21(ownerState);
-    const icon = /* @__PURE__ */ (0, import_jsx_runtime45.jsx)(SwitchThumb, {
+    const classes = useUtilityClasses25(ownerState);
+    const icon = /* @__PURE__ */ (0, import_jsx_runtime49.jsx)(SwitchThumb, {
       className: classes.thumb,
       ownerState
     });
-    return /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)(SwitchRoot, {
+    return /* @__PURE__ */ (0, import_jsx_runtime50.jsxs)(SwitchRoot, {
       className: clsx_m_default(classes.root, className),
       sx,
       ownerState,
-      children: [/* @__PURE__ */ (0, import_jsx_runtime45.jsx)(SwitchSwitchBase, _extends({
+      children: [/* @__PURE__ */ (0, import_jsx_runtime49.jsx)(SwitchSwitchBase, _extends({
         type: "checkbox",
         icon,
         checkedIcon: icon,
@@ -37151,37 +37453,37 @@ const theme2 = createTheme({ palette: {
         classes: _extends({}, classes, {
           root: classes.switchBase
         })
-      })), /* @__PURE__ */ (0, import_jsx_runtime45.jsx)(SwitchTrack, {
+      })), /* @__PURE__ */ (0, import_jsx_runtime49.jsx)(SwitchTrack, {
         className: classes.track,
         ownerState
       })]
     });
   });
   true ? Switch.propTypes = {
-    checked: import_prop_types43.default.bool,
-    checkedIcon: import_prop_types43.default.node,
-    classes: import_prop_types43.default.object,
-    className: import_prop_types43.default.string,
-    color: import_prop_types43.default.oneOfType([import_prop_types43.default.oneOf(["default", "primary", "secondary", "error", "info", "success", "warning"]), import_prop_types43.default.string]),
-    defaultChecked: import_prop_types43.default.bool,
-    disabled: import_prop_types43.default.bool,
-    disableRipple: import_prop_types43.default.bool,
-    edge: import_prop_types43.default.oneOf(["end", "start", false]),
-    icon: import_prop_types43.default.node,
-    id: import_prop_types43.default.string,
-    inputProps: import_prop_types43.default.object,
+    checked: import_prop_types47.default.bool,
+    checkedIcon: import_prop_types47.default.node,
+    classes: import_prop_types47.default.object,
+    className: import_prop_types47.default.string,
+    color: import_prop_types47.default.oneOfType([import_prop_types47.default.oneOf(["default", "primary", "secondary", "error", "info", "success", "warning"]), import_prop_types47.default.string]),
+    defaultChecked: import_prop_types47.default.bool,
+    disabled: import_prop_types47.default.bool,
+    disableRipple: import_prop_types47.default.bool,
+    edge: import_prop_types47.default.oneOf(["end", "start", false]),
+    icon: import_prop_types47.default.node,
+    id: import_prop_types47.default.string,
+    inputProps: import_prop_types47.default.object,
     inputRef: refType_default,
-    onChange: import_prop_types43.default.func,
-    required: import_prop_types43.default.bool,
-    size: import_prop_types43.default.oneOfType([import_prop_types43.default.oneOf(["medium", "small"]), import_prop_types43.default.string]),
-    sx: import_prop_types43.default.oneOfType([import_prop_types43.default.arrayOf(import_prop_types43.default.oneOfType([import_prop_types43.default.func, import_prop_types43.default.object, import_prop_types43.default.bool])), import_prop_types43.default.func, import_prop_types43.default.object]),
-    value: import_prop_types43.default.any
+    onChange: import_prop_types47.default.func,
+    required: import_prop_types47.default.bool,
+    size: import_prop_types47.default.oneOfType([import_prop_types47.default.oneOf(["medium", "small"]), import_prop_types47.default.string]),
+    sx: import_prop_types47.default.oneOfType([import_prop_types47.default.arrayOf(import_prop_types47.default.oneOfType([import_prop_types47.default.func, import_prop_types47.default.object, import_prop_types47.default.bool])), import_prop_types47.default.func, import_prop_types47.default.object]),
+    value: import_prop_types47.default.any
   } : void 0;
   var Switch_default = Switch;
 
   // node_modules/@mui/material/Toolbar/Toolbar.js
-  var React58 = __toESM(require_react());
-  var import_prop_types44 = __toESM(require_prop_types());
+  var React62 = __toESM(require_react());
+  var import_prop_types48 = __toESM(require_prop_types());
 
   // node_modules/@mui/material/Toolbar/toolbarClasses.js
   function getToolbarUtilityClass(slot) {
@@ -37190,9 +37492,9 @@ const theme2 = createTheme({ palette: {
   var toolbarClasses = generateUtilityClasses("MuiToolbar", ["root", "gutters", "regular", "dense"]);
 
   // node_modules/@mui/material/Toolbar/Toolbar.js
-  var import_jsx_runtime47 = __toESM(require_jsx_runtime());
-  var _excluded40 = ["className", "component", "disableGutters", "variant"];
-  var useUtilityClasses22 = (ownerState) => {
+  var import_jsx_runtime51 = __toESM(require_jsx_runtime());
+  var _excluded44 = ["className", "component", "disableGutters", "variant"];
+  var useUtilityClasses26 = (ownerState) => {
     const {
       classes,
       disableGutters,
@@ -37232,7 +37534,7 @@ const theme2 = createTheme({ palette: {
     theme,
     ownerState
   }) => ownerState.variant === "regular" && theme.mixins.toolbar);
-  var Toolbar = /* @__PURE__ */ React58.forwardRef(function Toolbar2(inProps, ref) {
+  var Toolbar = /* @__PURE__ */ React62.forwardRef(function Toolbar2(inProps, ref) {
     const props = useThemeProps2({
       props: inProps,
       name: "MuiToolbar"
@@ -37242,14 +37544,14 @@ const theme2 = createTheme({ palette: {
       component = "div",
       disableGutters = false,
       variant = "regular"
-    } = props, other = _objectWithoutPropertiesLoose(props, _excluded40);
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded44);
     const ownerState = _extends({}, props, {
       component,
       disableGutters,
       variant
     });
-    const classes = useUtilityClasses22(ownerState);
-    return /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(ToolbarRoot, _extends({
+    const classes = useUtilityClasses26(ownerState);
+    return /* @__PURE__ */ (0, import_jsx_runtime51.jsx)(ToolbarRoot, _extends({
       as: component,
       className: clsx_m_default(classes.root, className),
       ref,
@@ -37257,23 +37559,29 @@ const theme2 = createTheme({ palette: {
     }, other));
   });
   true ? Toolbar.propTypes = {
-    children: import_prop_types44.default.node,
-    classes: import_prop_types44.default.object,
-    className: import_prop_types44.default.string,
-    component: import_prop_types44.default.elementType,
-    disableGutters: import_prop_types44.default.bool,
-    sx: import_prop_types44.default.oneOfType([import_prop_types44.default.arrayOf(import_prop_types44.default.oneOfType([import_prop_types44.default.func, import_prop_types44.default.object, import_prop_types44.default.bool])), import_prop_types44.default.func, import_prop_types44.default.object]),
-    variant: import_prop_types44.default.oneOfType([import_prop_types44.default.oneOf(["dense", "regular"]), import_prop_types44.default.string])
+    children: import_prop_types48.default.node,
+    classes: import_prop_types48.default.object,
+    className: import_prop_types48.default.string,
+    component: import_prop_types48.default.elementType,
+    disableGutters: import_prop_types48.default.bool,
+    sx: import_prop_types48.default.oneOfType([import_prop_types48.default.arrayOf(import_prop_types48.default.oneOfType([import_prop_types48.default.func, import_prop_types48.default.object, import_prop_types48.default.bool])), import_prop_types48.default.func, import_prop_types48.default.object]),
+    variant: import_prop_types48.default.oneOfType([import_prop_types48.default.oneOf(["dense", "regular"]), import_prop_types48.default.string])
   } : void 0;
   var Toolbar_default = Toolbar;
 
   // client/components/PageHeader.jsx
   var import_react13 = __toESM(require_react(), 1);
-  var import_prop_types45 = __toESM(require_prop_types(), 1);
+  var import_prop_types49 = __toESM(require_prop_types(), 1);
+
+  // node_modules/@mui/icons-material/esm/Favorite.js
+  var import_jsx_runtime52 = __toESM(require_jsx_runtime());
+  var Favorite_default = createSvgIcon(/* @__PURE__ */ (0, import_jsx_runtime52.jsx)("path", {
+    d: "m12 21.35-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+  }), "Favorite");
 
   // node_modules/@mui/icons-material/esm/Menu.js
-  var import_jsx_runtime48 = __toESM(require_jsx_runtime());
-  var Menu_default = createSvgIcon(/* @__PURE__ */ (0, import_jsx_runtime48.jsx)("path", {
+  var import_jsx_runtime53 = __toESM(require_jsx_runtime());
+  var Menu_default = createSvgIcon(/* @__PURE__ */ (0, import_jsx_runtime53.jsx)("path", {
     d: "M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
   }), "Menu");
 
@@ -37303,7 +37611,7 @@ const theme2 = createTheme({ palette: {
     }, barData));
   }
   PageHeader.propTypes = {
-    toggleDarkMode: import_prop_types45.default.func.isRequired
+    toggleDarkMode: import_prop_types49.default.func.isRequired
   };
   var MaterialUISwitch = styled_default(Switch_default)(({ theme }) => ({
     width: 62,
@@ -37349,247 +37657,18 @@ const theme2 = createTheme({ palette: {
   }));
 
   // client/components/HomeContent.jsx
-  var import_react15 = __toESM(require_react(), 1);
-  var import_prop_types47 = __toESM(require_prop_types(), 1);
-
-  // client/components/Technologies.jsx
-  var import_react14 = __toESM(require_react(), 1);
-  var import_prop_types46 = __toESM(require_prop_types(), 1);
-  function Technologies(props) {
-    const { openModal } = props;
-    const hoverAction = {
-      cursor: "pointer"
-    };
-    return /* @__PURE__ */ import_react14.default.createElement(import_react14.default.Fragment, null, /* @__PURE__ */ import_react14.default.createElement(Typography_default, {
-      variant: "h5",
-      component: "div",
-      align: "center",
-      sx: { m: 2 }
-    }, "Technologies"), /* @__PURE__ */ import_react14.default.createElement(Box_default, {
-      align: "center",
-      alignItems: "center",
-      justifyContent: "center",
-      onClick: openModal,
-      sx: [{ display: "flex" }, { "&:hover": hoverAction }]
-    }, /* @__PURE__ */ import_react14.default.createElement(AvatarGroup_default, {
-      max: 6,
-      spacing: 1
-    }, /* @__PURE__ */ import_react14.default.createElement(Avatar_default, {
-      alt: "Java",
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
-      variant: "square",
-      sx: { mr: 2.5, ml: 2.5 }
-    }), /* @__PURE__ */ import_react14.default.createElement(Avatar_default, {
-      alt: "JavaScript",
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-      variant: "square",
-      sx: { mr: 2.5, ml: 2.5 }
-    }), /* @__PURE__ */ import_react14.default.createElement(Avatar_default, {
-      alt: "Git",
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
-      variant: "square",
-      sx: { mr: 2.5, ml: 2.5 }
-    }), /* @__PURE__ */ import_react14.default.createElement(Avatar_default, {
-      alt: "Python",
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-      variant: "square",
-      sx: { mr: 2.5, ml: 2.5 }
-    }), /* @__PURE__ */ import_react14.default.createElement(Avatar_default, {
-      alt: "React",
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-      variant: "square",
-      sx: { mr: 2.5, ml: 2.5 }
-    }), /* @__PURE__ */ import_react14.default.createElement(Avatar_default, {
-      alt: "Azure DevOps",
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg",
-      variant: "square",
-      sx: { mr: 2.5, ml: 2.5 }
-    }), /* @__PURE__ */ import_react14.default.createElement(Avatar_default, {
-      alt: "Bash",
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg",
-      variant: "square",
-      sx: { mr: 2.5, ml: 2.5 }
-    }), /* @__PURE__ */ import_react14.default.createElement(Avatar_default, {
-      alt: "Bootstrap",
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
-      variant: "square",
-      sx: { mr: 2.5, ml: 2.5 }
-    }), /* @__PURE__ */ import_react14.default.createElement(Avatar_default, {
-      alt: "Confluence",
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/confluence/confluence-original.svg",
-      variant: "square",
-      sx: { mr: 2.5, ml: 2.5 }
-    }), /* @__PURE__ */ import_react14.default.createElement(Avatar_default, {
-      alt: "CPlusPlus",
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
-      variant: "square",
-      sx: { mr: 2.5, ml: 2.5 }
-    }), /* @__PURE__ */ import_react14.default.createElement(Avatar_default, {
-      alt: "CSharp",
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg",
-      variant: "square",
-      sx: { mr: 2.5, ml: 2.5 }
-    }), /* @__PURE__ */ import_react14.default.createElement(Avatar_default, {
-      alt: "CSS",
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-      variant: "square",
-      sx: { mr: 2.5, ml: 2.5 }
-    }), /* @__PURE__ */ import_react14.default.createElement(Avatar_default, {
-      alt: "Docker",
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
-      variant: "square",
-      sx: { mr: 2.5, ml: 2.5 }
-    }), /* @__PURE__ */ import_react14.default.createElement(Avatar_default, {
-      alt: "DotNetCore",
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg",
-      variant: "square",
-      sx: { mr: 2.5, ml: 2.5 }
-    }), /* @__PURE__ */ import_react14.default.createElement(Avatar_default, {
-      alt: "ESLint",
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eslint/eslint-original.svg",
-      variant: "square",
-      sx: { mr: 2.5, ml: 2.5 }
-    }), /* @__PURE__ */ import_react14.default.createElement(Avatar_default, {
-      alt: "Express.js",
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-      variant: "square",
-      sx: { mr: 2.5, ml: 2.5 }
-    }), /* @__PURE__ */ import_react14.default.createElement(Avatar_default, {
-      alt: "GitHub",
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
-      variant: "square",
-      sx: { mr: 2.5, ml: 2.5 }
-    }), /* @__PURE__ */ import_react14.default.createElement(Avatar_default, {
-      alt: "HTML",
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-      variant: "square",
-      sx: { mr: 2.5, ml: 2.5 }
-    }), /* @__PURE__ */ import_react14.default.createElement(Avatar_default, {
-      alt: "Jupyter Notebooks",
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original-wordmark.svg",
-      variant: "square",
-      sx: { mr: 2.5, ml: 2.5 }
-    }), /* @__PURE__ */ import_react14.default.createElement(Avatar_default, {
-      alt: "Kubernetes",
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg",
-      variant: "square",
-      sx: { mr: 2.5, ml: 2.5 }
-    }), /* @__PURE__ */ import_react14.default.createElement(Avatar_default, {
-      alt: "Linux",
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
-      variant: "square",
-      sx: { mr: 2.5, ml: 2.5 }
-    }), /* @__PURE__ */ import_react14.default.createElement(Avatar_default, {
-      alt: "MaterialUI",
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg",
-      variant: "square",
-      sx: { mr: 2.5, ml: 2.5 }
-    }), /* @__PURE__ */ import_react14.default.createElement(Avatar_default, {
-      alt: "MySQL",
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
-      variant: "square",
-      sx: { mr: 2.5, ml: 2.5 }
-    }), /* @__PURE__ */ import_react14.default.createElement(Avatar_default, {
-      alt: "NodeJS",
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-      variant: "square",
-      sx: { mr: 2.5, ml: 2.5 }
-    }), /* @__PURE__ */ import_react14.default.createElement(Avatar_default, {
-      alt: "NPM",
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg",
-      variant: "square",
-      sx: { mr: 2.5, ml: 2.5 }
-    }), /* @__PURE__ */ import_react14.default.createElement(Avatar_default, {
-      alt: "PHP",
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
-      variant: "square",
-      sx: { mr: 2.5, ml: 2.5 }
-    }), /* @__PURE__ */ import_react14.default.createElement(Avatar_default, {
-      alt: "Ubuntu",
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain.svg",
-      variant: "square",
-      sx: { mr: 2.5, ml: 2.5 }
-    }), /* @__PURE__ */ import_react14.default.createElement(Avatar_default, {
-      alt: "Visual Studio",
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg",
-      variant: "square",
-      sx: { mr: 2.5, ml: 2.5 }
-    }), /* @__PURE__ */ import_react14.default.createElement(Avatar_default, {
-      alt: "VSCode",
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
-      variant: "square",
-      sx: { mr: 2.5, ml: 2.5 }
-    }), /* @__PURE__ */ import_react14.default.createElement(Avatar_default, {
-      alt: "Windows",
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg",
-      variant: "square",
-      sx: { mr: 2.5, ml: 2.5 }
-    }))));
-  }
-  Technologies.propTypes = {
-    openModal: import_prop_types46.default.func
-  };
-  Technologies.defaultProps = {
-    openModal: null
-  };
-
-  // client/components/HomeContent.jsx
-  function HomeContent(props) {
-    const { openModal } = props;
-    return /* @__PURE__ */ import_react15.default.createElement(import_react15.default.Fragment, null, /* @__PURE__ */ import_react15.default.createElement(Typography_default, {
-      align: "center",
-      variant: "h3",
-      component: "div",
-      sx: { mt: 2 }
-    }, "Portfolio"), /* @__PURE__ */ import_react15.default.createElement(Divider_default, null), /* @__PURE__ */ import_react15.default.createElement(Technologies, {
-      openModal
-    }), /* @__PURE__ */ import_react15.default.createElement(Box_default, {
-      sx: { display: "flex" }
-    }, /* @__PURE__ */ import_react15.default.createElement(Avatar_default, {
-      alt: "Tyler Marefke",
-      src: "media/TylerAvatar.jpg",
-      sx: { width: 128, height: 128 }
-    })));
-  }
-  HomeContent.propTypes = {
-    openModal: import_prop_types47.default.func
-  };
-  HomeContent.defaultProps = {
-    openModal: null
-  };
-
-  // client/components/IconsModal.jsx
   var import_react17 = __toESM(require_react(), 1);
-  var import_prop_types48 = __toESM(require_prop_types(), 1);
+  var import_prop_types52 = __toESM(require_prop_types(), 1);
 
-  // client/components/modalParts/IconsModalBody.jsx
-  var import_react16 = __toESM(require_react(), 1);
-  function IconsModalBody(props) {
-    const iconGrid = icons.map((icon) => {
-      return /* @__PURE__ */ import_react16.default.createElement(Grid_default, {
-        item: true,
-        key: icon.id,
-        xs: 4,
-        sm: 3,
-        lg: 2
-      }, /* @__PURE__ */ import_react16.default.createElement(Tooltip_default, {
-        title: `${icon.name}`
-      }, /* @__PURE__ */ import_react16.default.createElement(Avatar_default, {
-        alt: `${icon.name}`,
-        src: `${icon.link}`,
-        variant: "square",
-        sx: { mt: 1, mb: 1 }
-      })));
-    });
-    return /* @__PURE__ */ import_react16.default.createElement(DialogContent_default, null, /* @__PURE__ */ import_react16.default.createElement(Grid_default, {
-      container: true,
-      spacing: 2,
-      justifyContent: "center",
-      alignItems: "center",
-      align: "center"
-    }, iconGrid));
-  }
-  var icons = [
+  // client/components/Projects.jsx
+  var import_react15 = __toESM(require_react(), 1);
+
+  // client/components/ProjectCards.jsx
+  var import_react14 = __toESM(require_react(), 1);
+  var import_prop_types50 = __toESM(require_prop_types(), 1);
+
+  // client/data/icons.json
+  var icons_default = [
     {
       id: 1,
       name: "Azure DevOps",
@@ -37652,90 +37731,350 @@ const theme2 = createTheme({ palette: {
     },
     {
       id: 13,
+      name: "GitHub",
+      link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+    },
+    {
+      id: 14,
       name: "HTML",
       link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
     },
     {
-      id: 14,
+      id: 15,
       name: "Java",
       link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
     },
     {
-      id: 15,
+      id: 16,
       name: "JavaScript",
       link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
     },
     {
-      id: 16,
+      id: 17,
       name: "Jupyter Notebooks",
       link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original-wordmark.svg"
     },
     {
-      id: 17,
+      id: 18,
       name: "Kubernetes",
       link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg"
     },
     {
-      id: 18,
+      id: 19,
       name: "Linux",
       link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
     },
     {
-      id: 19,
+      id: 20,
       name: "MaterialUI",
       link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg"
     },
     {
-      id: 20,
+      id: 21,
       name: "MySQL",
       link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
     },
     {
-      id: 21,
+      id: 22,
       name: "NodeJS",
       link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
     },
     {
-      id: 22,
+      id: 23,
       name: "NPM",
       link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg"
     },
     {
-      id: 23,
+      id: 24,
       name: "PHP",
       link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
     },
     {
-      id: 24,
+      id: 25,
       name: "Python",
       link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
     },
     {
-      id: 25,
+      id: 26,
       name: "React",
       link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
     },
     {
-      id: 26,
+      id: 27,
       name: "Ubuntu",
       link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain.svg"
     },
     {
-      id: 27,
+      id: 28,
       name: "Visual Studio",
       link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg"
     },
     {
-      id: 28,
+      id: 29,
       name: "VSCode",
       link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
     },
     {
-      id: 29,
+      id: 30,
       name: "Windows",
       link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg"
     }
   ];
+
+  // client/components/ProjectCards.jsx
+  function ProjectCards(props) {
+    const [favorite, setFavorite] = import_react14.default.useState(false);
+    const { project } = props;
+    let iconData = null;
+    if (project.technologies) {
+      iconData = icons_default.map((icon) => {
+        if (project.technologies.find((technology) => {
+          return technology === icon.name;
+        })) {
+          return /* @__PURE__ */ import_react14.default.createElement(Tooltip_default, {
+            key: icon.id,
+            title: `${icon.name}`
+          }, /* @__PURE__ */ import_react14.default.createElement(Avatar_default, {
+            alt: `${icon.name}`,
+            src: `${icon.link}`,
+            variant: "square",
+            sx: { mr: 2.5, ml: 2.5 }
+          }));
+        } else {
+          return;
+        }
+      });
+    }
+    const hoverAction = {
+      cursor: "pointer",
+      boxShadow: 10
+    };
+    return /* @__PURE__ */ import_react14.default.createElement(Card_default, {
+      style: { height: "100%" },
+      sx: [{ maxWidth: 345 }, { "&:hover": hoverAction }]
+    }, /* @__PURE__ */ import_react14.default.createElement(CardContent_default, null, /* @__PURE__ */ import_react14.default.createElement(Box_default, {
+      background: "none",
+      justifyContent: "left",
+      sx: { display: "flex" }
+    }, /* @__PURE__ */ import_react14.default.createElement(AvatarGroup_default, {
+      max: 5
+    }, iconData))), /* @__PURE__ */ import_react14.default.createElement(CardMedia_default, {
+      component: "img",
+      alt: `Image of ${project.title}`,
+      src: `media/projects/${project.image}`,
+      height: "150px"
+    }), /* @__PURE__ */ import_react14.default.createElement(CardContent_default, null, /* @__PURE__ */ import_react14.default.createElement(Typography_default, {
+      variant: "h6",
+      component: "div"
+    }, `${project.title}`), /* @__PURE__ */ import_react14.default.createElement(Typography_default, {
+      variant: "subtitle1",
+      component: "div",
+      align: "left"
+    }, `${project.details}`)), /* @__PURE__ */ import_react14.default.createElement(CardActions_default, {
+      sx: { justifyContent: "space-between" }
+    }, /* @__PURE__ */ import_react14.default.createElement(Tooltip_default, {
+      title: "Favorite"
+    }, /* @__PURE__ */ import_react14.default.createElement(IconButton_default, {
+      onClick: () => {
+        setFavorite(!favorite);
+      }
+    }, /* @__PURE__ */ import_react14.default.createElement(Favorite_default, {
+      sx: { color: favorite ? "red" : "none" }
+    }))), /* @__PURE__ */ import_react14.default.createElement(Button_default, {
+      size: "small"
+    }, "Learn More")));
+  }
+  ProjectCards.propTypes = {
+    project: import_prop_types50.default.shape({
+      image: import_prop_types50.default.string.isRequired,
+      title: import_prop_types50.default.string.isRequired,
+      details: import_prop_types50.default.string.isRequired,
+      technologies: import_prop_types50.default.arrayOf(import_prop_types50.default.string).isRequired
+    }).isRequired
+  };
+
+  // client/data/projects.json
+  var projects_default = [
+    {
+      id: 1,
+      title: "MiniMax Algorithm",
+      details: "Tic-Tac-Toe game where the computer will always win.  The computer uses the minimax algorithm to chose the most optimal move.",
+      technologies: ["Java", "Windows"],
+      image: "MiniMax.jpg"
+    },
+    {
+      id: 2,
+      title: "Shell Project",
+      details: "A mock up of a real shell.  Uses C++ to simulate a linux shell with several of the main functions that are seen in a unix shell.",
+      technologies: ["C++", "Linux", "Bash", "VSCode"],
+      image: "ShellProject.jpg"
+    },
+    {
+      id: 3,
+      title: "Scheduling Tool",
+      details: "Scheduling tool that makes use of the humanity api to process employee data.  Mainly used for better data consolidation than humanity.",
+      technologies: ["JavaScript", "NodeJS", "Express.js", "React", "MaterialUI", "VSCode", "Windows"],
+      image: "SchedulingTool.jpg"
+    },
+    {
+      id: 4,
+      title: "Hand Ciphers",
+      details: "A variety of different hand ciphers that exist.  Algorithms to encrypt and decrypt those ciphers included for each one.",
+      technologies: ["Python", "VSCode", "Windows"],
+      image: "HandCiphers.jpg"
+    }
+  ];
+
+  // client/components/Projects.jsx
+  function Projects(props) {
+    const projectCards = projects_default.map((project) => {
+      return /* @__PURE__ */ import_react15.default.createElement(Grid_default, {
+        key: project.id,
+        item: true,
+        xs: 12,
+        sm: 6,
+        lg: 4
+      }, /* @__PURE__ */ import_react15.default.createElement(ProjectCards, {
+        project
+      }));
+    });
+    return /* @__PURE__ */ import_react15.default.createElement(import_react15.default.Fragment, null, /* @__PURE__ */ import_react15.default.createElement(Typography_default, {
+      variant: "h5",
+      component: "div",
+      align: "center",
+      sx: { m: 2 }
+    }, "Projects"), /* @__PURE__ */ import_react15.default.createElement(Grid_default, {
+      container: true,
+      spacing: 2,
+      align: "center"
+    }, projectCards));
+  }
+
+  // client/components/Technologies.jsx
+  var import_react16 = __toESM(require_react(), 1);
+  var import_prop_types51 = __toESM(require_prop_types(), 1);
+  function Technologies(props) {
+    const { openModal } = props;
+    const hoverAction = {
+      cursor: "pointer"
+    };
+    const avatars = icons_default.map((icon) => {
+      if (!["Java", "JavaScript", "Git", "Python", "React"].includes(icon.name)) {
+        return /* @__PURE__ */ import_react16.default.createElement(Avatar_default, {
+          key: icon.id,
+          alt: `${icon.name}`,
+          src: `${icon.link}`,
+          variant: "square",
+          sx: { mr: 2.5, ml: 2.5 }
+        });
+      } else {
+        return;
+      }
+    });
+    return /* @__PURE__ */ import_react16.default.createElement(import_react16.default.Fragment, null, /* @__PURE__ */ import_react16.default.createElement(Typography_default, {
+      variant: "h5",
+      component: "div",
+      align: "center",
+      sx: { m: 2 }
+    }, "Technologies"), /* @__PURE__ */ import_react16.default.createElement(Box_default, {
+      align: "center",
+      alignItems: "center",
+      justifyContent: "center",
+      onClick: openModal,
+      sx: [{ display: "flex" }, { "&:hover": hoverAction }]
+    }, /* @__PURE__ */ import_react16.default.createElement(AvatarGroup_default, {
+      max: 6,
+      spacing: 1
+    }, /* @__PURE__ */ import_react16.default.createElement(Avatar_default, {
+      alt: "Java",
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+      variant: "square",
+      sx: { mr: 2.5, ml: 2.5 }
+    }), /* @__PURE__ */ import_react16.default.createElement(Avatar_default, {
+      alt: "JavaScript",
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+      variant: "square",
+      sx: { mr: 2.5, ml: 2.5 }
+    }), /* @__PURE__ */ import_react16.default.createElement(Avatar_default, {
+      alt: "Git",
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+      variant: "square",
+      sx: { mr: 2.5, ml: 2.5 }
+    }), /* @__PURE__ */ import_react16.default.createElement(Avatar_default, {
+      alt: "Python",
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+      variant: "square",
+      sx: { mr: 2.5, ml: 2.5 }
+    }), /* @__PURE__ */ import_react16.default.createElement(Avatar_default, {
+      alt: "React",
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      variant: "square",
+      sx: { mr: 2.5, ml: 2.5 }
+    }), avatars)));
+  }
+  Technologies.propTypes = {
+    openModal: import_prop_types51.default.func
+  };
+  Technologies.defaultProps = {
+    openModal: null
+  };
+
+  // client/components/HomeContent.jsx
+  function HomeContent(props) {
+    const { openModal } = props;
+    return /* @__PURE__ */ import_react17.default.createElement(import_react17.default.Fragment, null, /* @__PURE__ */ import_react17.default.createElement(Typography_default, {
+      align: "center",
+      variant: "h3",
+      component: "div",
+      sx: { mt: 3 }
+    }, "Portfolio"), /* @__PURE__ */ import_react17.default.createElement(Divider_default, null), /* @__PURE__ */ import_react17.default.createElement(Technologies, {
+      openModal
+    }), /* @__PURE__ */ import_react17.default.createElement(Projects, null), /* @__PURE__ */ import_react17.default.createElement(Box_default, {
+      sx: { display: "flex" }
+    }, /* @__PURE__ */ import_react17.default.createElement(Avatar_default, {
+      alt: "Tyler Marefke",
+      src: "media/TylerAvatar.jpg",
+      sx: { width: 128, height: 128 }
+    })));
+  }
+  HomeContent.propTypes = {
+    openModal: import_prop_types52.default.func
+  };
+  HomeContent.defaultProps = {
+    openModal: null
+  };
+
+  // client/components/IconsModal.jsx
+  var import_react19 = __toESM(require_react(), 1);
+  var import_prop_types53 = __toESM(require_prop_types(), 1);
+
+  // client/components/modalParts/IconsModalBody.jsx
+  var import_react18 = __toESM(require_react(), 1);
+  function IconsModalBody(props) {
+    const iconGrid = icons_default.map((icon) => {
+      return /* @__PURE__ */ import_react18.default.createElement(Grid_default, {
+        item: true,
+        key: icon.id,
+        xs: 4,
+        sm: 3,
+        lg: 2
+      }, /* @__PURE__ */ import_react18.default.createElement(Tooltip_default, {
+        title: `${icon.name}`
+      }, /* @__PURE__ */ import_react18.default.createElement(Avatar_default, {
+        alt: `${icon.name}`,
+        src: `${icon.link}`,
+        variant: "square",
+        sx: { mt: 1, mb: 1 }
+      })));
+    });
+    return /* @__PURE__ */ import_react18.default.createElement(DialogContent_default, null, /* @__PURE__ */ import_react18.default.createElement(Grid_default, {
+      container: true,
+      spacing: 2,
+      justifyContent: "center",
+      alignItems: "center",
+      align: "center"
+    }, iconGrid));
+  }
 
   // client/components/IconsModal.jsx
   function IconsModal(props) {
@@ -37745,25 +38084,35 @@ const theme2 = createTheme({ palette: {
         onClose();
       }
     };
-    return /* @__PURE__ */ import_react17.default.createElement(Dialog_default, {
+    return /* @__PURE__ */ import_react19.default.createElement(Dialog_default, {
       fullWidth: true,
       open: showModal,
       onClose: hideModal,
       maxWidth: "xs"
-    }, /* @__PURE__ */ import_react17.default.createElement(DialogTitle_default, {
+    }, /* @__PURE__ */ import_react19.default.createElement(DialogTitle_default, {
       align: "center"
-    }, /* @__PURE__ */ import_react17.default.createElement(Typography_default, {
+    }, /* @__PURE__ */ import_react19.default.createElement(Typography_default, {
       variant: "h4",
       component: "div"
-    }, "Technology Details")), /* @__PURE__ */ import_react17.default.createElement(IconsModalBody, null), /* @__PURE__ */ import_react17.default.createElement(DialogActions_default, null, /* @__PURE__ */ import_react17.default.createElement(Button_default, {
+    }, "Technology Details"), /* @__PURE__ */ import_react19.default.createElement(Typography_default, {
+      variant: "subtitle2",
+      component: "div"
+    }, "Hover Over Icons for more Info")), /* @__PURE__ */ import_react19.default.createElement(IconsModalBody, null), /* @__PURE__ */ import_react19.default.createElement(DialogActions_default, {
+      sx: { justifyContent: "space-between" }
+    }, /* @__PURE__ */ import_react19.default.createElement(Typography_default, {
+      variant: "subtitle2",
+      component: "div",
+      sx: { ml: 2 }
+    }, "Icons provided through devicon.dev"), /* @__PURE__ */ import_react19.default.createElement(Button_default, {
       variant: "outlined",
       color: "secondary",
-      onClick: hideModal
+      onClick: hideModal,
+      sx: { mr: 2 }
     }, "Close")));
   }
   IconsModal.propTypes = {
-    showModal: import_prop_types48.default.bool.isRequired,
-    onClose: import_prop_types48.default.func
+    showModal: import_prop_types53.default.bool.isRequired,
+    onClose: import_prop_types53.default.func
   };
   IconsModal.defaultProps = {
     onClose: null
@@ -37771,8 +38120,8 @@ const theme2 = createTheme({ palette: {
 
   // client/EntryPoint.jsx
   function EntryPoint(props) {
-    const [showIconsModal, setShowIconsModal] = import_react18.default.useState(false);
-    const [darkMode, setDarkMode] = import_react18.default.useState(false);
+    const [showIconsModal, setShowIconsModal] = import_react20.default.useState(false);
+    const [darkMode, setDarkMode] = import_react20.default.useState(false);
     const openIconsModal = () => {
       setShowIconsModal(true);
     };
@@ -37782,13 +38131,13 @@ const theme2 = createTheme({ palette: {
     const toggleDarkMode = () => {
       setDarkMode(!darkMode);
     };
-    return /* @__PURE__ */ import_react18.default.createElement(Container_default, null, /* @__PURE__ */ import_react18.default.createElement(ThemeProvider_default2, {
+    return /* @__PURE__ */ import_react20.default.createElement(Container_default, null, /* @__PURE__ */ import_react20.default.createElement(ThemeProvider_default2, {
       theme: darkMode ? themeDark : themeLight
-    }, /* @__PURE__ */ import_react18.default.createElement(CssBaseline_default, null), /* @__PURE__ */ import_react18.default.createElement(PageHeader, {
+    }, /* @__PURE__ */ import_react20.default.createElement(CssBaseline_default, null), /* @__PURE__ */ import_react20.default.createElement(PageHeader, {
       toggleDarkMode
-    }), /* @__PURE__ */ import_react18.default.createElement(HomeContent, {
+    }), /* @__PURE__ */ import_react20.default.createElement(HomeContent, {
       openModal: openIconsModal
-    }), /* @__PURE__ */ import_react18.default.createElement(IconsModal, {
+    }), /* @__PURE__ */ import_react20.default.createElement(IconsModal, {
       showModal: showIconsModal,
       onClose: hideModal
     })));
@@ -37805,7 +38154,7 @@ const theme2 = createTheme({ palette: {
   });
 
   // client/app.jsx
-  (0, import_client.createRoot)(document.getElementById("root")).render(/* @__PURE__ */ import_react19.default.createElement(EntryPoint, null));
+  (0, import_client.createRoot)(document.getElementById("root")).render(/* @__PURE__ */ import_react21.default.createElement(EntryPoint, null));
 })();
 /*
 object-assign
