@@ -11,7 +11,7 @@ export default function HomeContent (props) {
 
   return(
     <React.Fragment>
-      <Typography align='center' variant='h3' component='div' sx={{ mt: 10 }}>
+      <Typography align='center' variant='h3' component='div' sx={{ mt: 2 }}>
         Portfolio
       </Typography>
       <Divider />
@@ -20,7 +20,7 @@ export default function HomeContent (props) {
         <Avatar
           alt='Tyler Marefke'
           src='media/TylerAvatar.jpg'
-          sx={{ width: 256, height: 256 }}
+          sx={{ width: 128, height: 128 }}
         />
       </Box>
     </React.Fragment>
