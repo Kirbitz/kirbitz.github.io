@@ -1,11 +1,11 @@
 import React from 'react'
 
-import { Avatar, DialogContent, Grid, Tooltip, Typography } from '@mui/material'
+import { Avatar, DialogContent, Grid, Tooltip } from '@mui/material'
 
 export default function IconsModalBody (props) {
   const iconGrid = icons.map((icon) => {
     return( 
-      <Grid item key={icon.id} xs={12} sm={4} md={3} lg={2}>
+      <Grid item key={icon.id} xs={4} sm={3} lg={2}>
         <Tooltip title={`${icon.name}`}>
           <Avatar alt={`${icon.name}`} src={`${icon.link}`} variant="square" sx={{ mt: 1, mb: 1 }} />
         </Tooltip>

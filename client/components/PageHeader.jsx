@@ -1,30 +1,48 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-import { AppBar, IconButton, Switch, styled, Toolbar, Tooltip, Typography } from '@mui/material'
+import { AppBar, Box, IconButton, Switch, styled, Toolbar, Tooltip, Typography } from '@mui/material'
 import { Menu } from '@mui/icons-material' 
 
 export default function PageHeader (props) {
-  return(
-    <AppBar sx={{ bgcolor: '#6f49c9' }}>
-      <Toolbar>
-        <Tooltip title='Open Menu'>
-          <IconButton
-            size='large'
-            edge='start'
-            color='inherit'
-            aria-label='menu-button'
-            sx={{ mr: 1 }}
-          >
-            <Menu />
-          </IconButton>
-        </Tooltip>
-        <Typography align='center' variant='h3' component='h2' sx={{ flexGrow: 1 }}>
-          Tyler Marefke
-        </Typography>
-        <MaterialUISwitch />
-      </Toolbar>
-    </AppBar>
+  const { toggleDarkMode } = props
+
+  const barData = (
+    <React.Fragment>
+      <Tooltip title='Open Menu'>
+        <IconButton
+          size='large'
+          edge='start'
+          color='inherit'
+          aria-label='menu-button'
+          sx={{ mr: 1 }}
+        >
+          <Menu />
+        </IconButton>
+      </Tooltip>
+      <Typography align='center' variant='h3' component='h2' sx={{ flexGrow: 1 }}>
+        Tyler Marefke
+      </Typography>
+      <MaterialUISwitch onClick={toggleDarkMode} />
+    </React.Fragment>
   )
+
+  return(
+    <React.Fragment>
+      <AppBar sx={{ bgcolor: '#6f49c9' }}>
+        <Toolbar>
+          {barData}
+        </Toolbar>
+      </AppBar>
+      <Box sx={{ display: 'flex' }}>
+        {barData}
+      </Box>
+    </React.Fragment>
+  )
+}
+
+PageHeader.propTypes = {
+  toggleDarkMode: PropTypes.func.isRequired
 }
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
