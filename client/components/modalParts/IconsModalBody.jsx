@@ -2,7 +2,10 @@ import React from 'react'
 
 import { Avatar, DialogContent, Grid, Tooltip } from '@mui/material'
 
+import icons from '../../data/icons.json'
+
 export default function IconsModalBody (props) {
+
   const iconGrid = icons.map((icon) => {
     return( 
       <Grid item key={icon.id} xs={4} sm={3} lg={2}>
@@ -22,7 +25,7 @@ export default function IconsModalBody (props) {
   )
 }
 
-const icons = [
+const lies = [
   {
     id: 1,
     name: "Azure DevOps",
@@ -85,86 +88,91 @@ const icons = [
   },
   {
     id: 13,
+    name: "GitHub",
+    link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+  },
+  {
+    id: 14,
     name: "HTML",
     link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
   },
   {
-    id: 14,
+    id: 15,
     name: "Java",
     link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
   },
   {
-    id: 15,
+    id: 16,
     name: "JavaScript",
     link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
   },
   {
-    id: 16,
+    id: 17,
     name: "Jupyter Notebooks",
     link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original-wordmark.svg"
   },
   {
-    id: 17,
+    id: 18,
     name: "Kubernetes",
     link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg"
   },
   {
-    id: 18,
+    id: 19,
     name: "Linux",
     link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
   },
   {
-    id: 19,
+    id: 20,
     name: "MaterialUI",
     link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg"
   },
   {
-    id: 20,
+    id: 21,
     name: "MySQL",
     link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
   },
   {
-    id: 21,
+    id: 22,
     name: "NodeJS",
     link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
   },
   {
-    id: 22,
+    id: 23,
     name: "NPM",
     link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg"
   },
   {
-    id: 23,
+    id: 24,
     name: "PHP",
     link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
   },
   {
-    id: 24,
+    id: 25,
     name: "Python",
     link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
   },
   {
-    id: 25,
+    id: 26,
     name: "React",
     link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
   },
   {
-    id: 26,
+    id: 27,
     name: "Ubuntu",
     link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain.svg"
   },
   {
-    id: 27,
+    id: 28,
     name: "Visual Studio",
     link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg"
   },
   {
-    id: 28,
+    id: 29,
     name: "VSCode",
     link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
   },
   {
-    id: 29,
+    id: 30,
     name: "Windows",
     link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg"
   }
