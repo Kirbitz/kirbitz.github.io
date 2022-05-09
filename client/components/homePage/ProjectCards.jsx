@@ -4,11 +4,11 @@ import PropTypes from 'prop-types'
 import { Avatar, AvatarGroup, Box, Button, Card, CardActions, CardContent, CardMedia, IconButton, Tooltip, Typography } from '@mui/material'
 import { Share } from '@mui/icons-material'
 
-import icons from '../data/icons.json'
+import icons from '../../data/icons.json'
 
 export default function ProjectCards (props) {
 
-  const { project } = props
+  const { changePage, project } = props
 
   let iconData = null
 
@@ -31,9 +31,15 @@ export default function ProjectCards (props) {
     boxShadow: 10
   }
 
+  const selectProject = () => {
+    if (changePage) {
+      changePage(project.id)
+    }
+  }
+
   return(
     <Card style={{ height: '100%' }} sx={[{ maxWidth: 345, display: 'flex', flexDirection: 'column' }, { '&:hover': hoverAction }]}>
-      <CardContent>
+      <CardContent onClick={selectProject}>
         <Box background='none' justifyContent='left' sx={{ display: 'flex' }}>
           <AvatarGroup max={5}>
             {iconData}
@@ -41,12 +47,13 @@ export default function ProjectCards (props) {
         </Box>
       </CardContent>
       <CardMedia
+        onClick={selectProject}
         component='img'
         alt={`Image of ${project.title}`}
         src={`media/projects/${project.image}`}
         height='150px'
       />
-      <CardContent sx={{ flexGrow: 1 }}>
+      <CardContent onClick={selectProject} sx={{ flexGrow: 1 }}>
         <Typography variant='h6' component='div'>
           {`${project.title}`}
         </Typography>
@@ -72,5 +79,10 @@ ProjectCards.propTypes = {
     title: PropTypes.string.isRequired,
     details: PropTypes.string.isRequired,
     technologies: PropTypes.arrayOf(PropTypes.string).isRequired
-  }).isRequired
+  }).isRequired,
+  changePage: PropTypes.func
+}
+
+ProjectCards.defaultProps = {
+  changePage: null
 }

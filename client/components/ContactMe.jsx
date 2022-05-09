@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Avatar, Box, CardMedia, Grid, Paper, Typography } from '@mui/material'
+import { Avatar, Box, Grid, Paper, Typography } from '@mui/material'
 
 import ContactBreadcrumbs from './ContactBreadcrumbs.jsx'
 

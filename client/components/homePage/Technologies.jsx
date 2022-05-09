@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import { Avatar, AvatarGroup, Box, Typography } from '@mui/material'
 
-import icons from '../data/icons.json'
+import icons from '../../data/icons.json'
 
 export default function Technologies (props) {
   const { openModal } = props

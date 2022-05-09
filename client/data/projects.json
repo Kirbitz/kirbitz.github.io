@@ -3,7 +3,7 @@
         "id": 1,
         "title": "MiniMax Algorithm",
         "details": "Tic-Tac-Toe game where the computer will always win.  The computer uses the minimax algorithm to chose the most optimal move.",
-        "technologies": ["Java", "Windows"],
+        "technologies": ["Java", "Eclipse", "Windows"],
         "image": "MiniMaxTicTacToe.jpg"
     },
     {

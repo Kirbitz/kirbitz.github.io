@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import { Button, Dialog, DialogTitle, DialogActions, Typography } from '@mui/material'
 
-import IconsModalBody from './modalParts/IconsModalBody.jsx'
+import IconsModalBody from '../modalParts/IconsModalBody.jsx'
 
 export default function IconsModal (props) {
   const { showModal, onClose } = props
