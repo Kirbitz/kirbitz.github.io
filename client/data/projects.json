@@ -26,5 +26,12 @@
         "details": "A variety of different hand ciphers that exist.  Algorithms to encrypt and decrypt those ciphers included for each one.",
         "technologies": ["Python", "VSCode", "Windows"],
         "image": "HandCiphers.jpg"
+    },
+    {
+        "id": 5,
+        "title": "Portfolio Website",
+        "details": "A website that holds a variety of content from the technologies I have worked in and projects that I have made.",
+        "technologies": ["JavaScript", "NodeJS", "Express.js", "React", "MaterialUI", "VSCode", "Windows"],
+        "image": "PortfolioWebsite.jpg"
     }
 ]

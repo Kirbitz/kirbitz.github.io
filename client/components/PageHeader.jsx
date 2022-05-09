@@ -4,8 +4,21 @@ import PropTypes from 'prop-types'
 import { AppBar, Box, IconButton, Switch, styled, Toolbar, Tooltip, Typography } from '@mui/material'
 import { Menu } from '@mui/icons-material' 
 
+import HomeMenu from './HomeMenu.jsx'
+
 export default function PageHeader (props) {
   const { toggleDarkMode } = props
+
+  const [anchorEl, setAnchorEl] = React.useState(null)
+  const openMenu = Boolean(anchorEl)
+
+  const showMenu = (event) => {
+    setAnchorEl(event.currentTarget)
+  }
+
+  const hideMenu = () => {
+    setAnchorEl(null)
+  }
 
   const barData = (
     <React.Fragment>
@@ -15,6 +28,7 @@ export default function PageHeader (props) {
           edge='start'
           color='inherit'
           aria-label='menu-button'
+          onClick={showMenu}
           sx={{ mr: 1 }}
         >
           <Menu />
@@ -37,6 +51,7 @@ export default function PageHeader (props) {
       <Box sx={{ display: 'flex' }}>
         {barData}
       </Box>
+      <HomeMenu openMenu={openMenu} anchorEl={anchorEl} onClose={hideMenu} />
     </React.Fragment>
   )
 }

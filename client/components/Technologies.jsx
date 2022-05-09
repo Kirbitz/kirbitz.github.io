@@ -22,8 +22,11 @@ export default function Technologies (props) {
 
   return(
     <React.Fragment>
-      <Typography variant='h5' component='div' align='center' sx={{ m: 2 }}>
+      <Typography variant='h4' component='div' align='center' sx={{ mt: 6 }}>
         Technologies
+      </Typography>
+      <Typography variant='subtitle2' component='div' align='center' sx={{ mb: 2 }}>
+        I Have Worked In
       </Typography>
       <Box align='center' alignItems='center' justifyContent='center' onClick={openModal} sx={[{ display: 'flex' }, { '&:hover': hoverAction }]}>
         <AvatarGroup max={6} spacing={1}>
