@@ -5,6 +5,7 @@ import { Avatar, Box, Divider, Typography } from '@mui/material'
 
 import Projects from './Projects.jsx'
 import Technologies from './Technologies.jsx'
+import ContactMe from './ContactMe.jsx'
 
 export default function HomeContent (props) {
   const { openModal } = props
@@ -17,13 +18,7 @@ export default function HomeContent (props) {
       <Divider />
       <Technologies openModal={openModal} />
       <Projects />
-      <Box sx={{ display: 'flex' }}>
-        <Avatar
-          alt='Tyler Marefke'
-          src='media/TylerAvatar.jpg'
-          sx={{ width: 128, height: 128 }}
-        />
-      </Box>
+      <ContactMe />
     </React.Fragment>
   )
 }

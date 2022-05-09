@@ -2,12 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import { Avatar, AvatarGroup, Box, Button, Card, CardActions, CardContent, CardMedia, IconButton, Tooltip, Typography } from '@mui/material'
-import { Favorite } from '@mui/icons-material'
+import { Share } from '@mui/icons-material'
 
 import icons from '../data/icons.json'
 
 export default function ProjectCards (props) {
-  const [favorite, setFavorite] = React.useState(false)
 
   const { project } = props
 
@@ -33,7 +32,7 @@ export default function ProjectCards (props) {
   }
 
   return(
-    <Card style={{ height: '100%' }} sx={[{ maxWidth: 345 }, { '&:hover': hoverAction }]}>
+    <Card style={{ height: '100%' }} sx={[{ maxWidth: 345, display: 'flex', flexDirection: 'column' }, { '&:hover': hoverAction }]}>
       <CardContent>
         <Box background='none' justifyContent='left' sx={{ display: 'flex' }}>
           <AvatarGroup max={5}>
@@ -47,7 +46,7 @@ export default function ProjectCards (props) {
         src={`media/projects/${project.image}`}
         height='150px'
       />
-      <CardContent>
+      <CardContent sx={{ flexGrow: 1 }}>
         <Typography variant='h6' component='div'>
           {`${project.title}`}
         </Typography>
@@ -56,9 +55,9 @@ export default function ProjectCards (props) {
         </Typography>
       </CardContent>
       <CardActions sx={{ justifyContent: 'space-between' }}>
-        <Tooltip title="Favorite">
-          <IconButton onClick={() => {setFavorite(!favorite)}}>
-            <Favorite sx={{ color: favorite ? 'red' : 'none' }} />
+        <Tooltip title="Share">
+          <IconButton>
+            <Share />
           </IconButton>
         </Tooltip>
         <Button size='small'>Learn More</Button>

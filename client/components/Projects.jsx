@@ -17,10 +17,10 @@ export default function Projects (props) {
 
   return(
     <React.Fragment>
-      <Typography variant='h5' component='div' align='center' sx={{ m: 2 }}>
+      <Typography variant='h4' component='div' align='center' sx={{ mt: 10, mb: 2 }}>
         Projects
       </Typography>
-      <Grid container spacing={2} align='center'>
+      <Grid container spacing={2} justifyContent='center' align='center'>
         {projectCards}
       </Grid>
     </React.Fragment>
