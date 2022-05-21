@@ -67,7 +67,7 @@ export default function ProjectCards (props) {
             <Share />
           </IconButton>
         </Tooltip>
-        <Button size='small'>Learn More</Button>
+        <Button size='small' onClick={selectProject}>Learn More</Button>
       </CardActions>
     </Card>
   )
