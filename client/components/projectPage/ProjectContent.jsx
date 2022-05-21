@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { Avatar, Box, Divider, Grid, IconButton, Tooltip, Typography } from '@mui/material'
+import { Avatar, CardMedia, Divider, Grid, IconButton, Tooltip, Typography } from '@mui/material'
 import { ArrowBack } from '@mui/icons-material'
 
 import icons from '../../data/icons.json'
@@ -46,10 +46,12 @@ export default function HomeContent (props) {
       <Divider sx={{ mb: 2 }} />
       <Grid container spacing={2}>
         <Grid item xs={12} sm={12} md={6}>
-          <img
+          <CardMedia
+            component='img'
             alt={`Image of ${project.title}`}
-            src={`media/projects/${project.image}`}
+            image={`media/projects/${project.image}`}
             width='100%'
+            sx={{ borderRadius: '10px' }}
           />
         </Grid>
         <Grid item xs={12} sm={12} md={6}>
