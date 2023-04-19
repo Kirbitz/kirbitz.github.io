@@ -10,7 +10,7 @@ export default function ContactBreadcrumbs (props) {
     <Breadcrumbs sx={{ display: 'flex', mr: 'auto', ml: 'auto' }}>
       <Box sx={{ display: 'flex' }}>
         <LinkedInLink />
-        <GitHubLink />
+        <GitHubLink link='https://github.com/Kirbitz' />
       </Box>
       <Typography variant='subtitle2' component='div'>tyler.marefke@gmail.com</Typography>
       <Typography variant='subtitle2' component='div'>715-928-1501</Typography>
