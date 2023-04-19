@@ -5,7 +5,14 @@
         "details": "Tic-Tac-Toe game where the computer will always win.  The computer uses the minimax algorithm to chose the most optimal move.",
         "technologies": ["Java", "Eclipse", "Windows"],
         "image": "MiniMaxTicTacToe.jpg",
-        "link": "https://github.com/Kirbitz/GraphTheoryMiniMaxAlg"
+        "link": "https://github.com/Kirbitz/GraphTheoryMiniMaxAlg",
+        "contributors": [
+            {
+                "id": 1,
+                "name": "Tiernan Meyer",
+                "link": "https://github.com/meyert8034"
+            }
+        ]
     },
     {
         "id": 2,
@@ -29,7 +36,14 @@
         "details": "A variety of different hand ciphers that exist.  Algorithms to encrypt and decrypt those ciphers included for each one.",
         "technologies": ["Python", "VSCode", "Windows"],
         "image": "HandCiphers.jpg",
-        "link": "https://github.com/Kirbitz/HandCiphers"
+        "link": "https://github.com/Kirbitz/HandCiphers",
+        "contributors": [
+            {
+                "id": 1,
+                "name": "Andrew Ujda",
+                "link": "https://github.com/AndrewUjda"
+            }
+        ]
     },
     {
         "id": 5,
@@ -45,22 +59,138 @@
         "details": "A variety of different pixel art upscale algorithms that then get converted to a SVG file format.",
         "technologies": ["Python", "NumPy", "Open CV", "VSCode", "Windows"],
         "image": "pixel_upscale.png",
-        "link": "https://github.com/Kirbitz/Pixel-Upscale-To-SVG"
+        "link": "https://github.com/Kirbitz/Pixel-Upscale-To-SVG",
+        "contributors": [
+            {
+                "id": 1,
+                "name": "Evan Dewitt",
+                "link": "https://github.com/dewitte0210"
+            },
+            {
+                "id": 2,
+                "name": "Jeremy Ivanauski",
+                "link": "https://github.com/Sirunknown91"
+            }
+        ]
     },
     {
         "id": 7,
+        "title": "Personal Programming Language",
+        "details": "A personalized programming language using tokenizer Flex and grammar in Bison.",
+        "technologies": ["Flex", "Bison", "C", "Bash", "VSCode", "Linux"],
+        "image": "ProgLang.png",
+        "link": "https://github.com/Kirbitz/Programming-Language",
+        "contributors": [
+            {
+                "id": 1,
+                "name": "Ethan Heuer",
+                "link": "https://github.com/EthanHeuer"
+            },
+            {
+                "id": 2,
+                "name": "Stephen Cornelius",
+                "link": "https://github.com/MintyMika"
+            }
+        ]
+    },
+    {
+        "id": 8,
         "title": "Nomic Game Manager Mobile Side",
         "details": "A mobile app for a board game called Nomic that is meant to act as a game manager.",
         "technologies": ["Kotlin", "Gradle", "Android Development Studio", "Windows"],
         "image": "nomic_game.jpg",
-        "link": "https://github.com/Kirbitz/NomicGameManager.Mobile"
+        "link": "https://github.com/Kirbitz/NomicGameManager.Mobile",
+        "contributors": [
+            {
+                "id": 1,
+                "name": "Tiernan Meyer",
+                "link": "https://github.com/meyert8034"
+            },
+            {
+                "id": 2,
+                "name": "Adam Lucka",
+                "link": "https://github.com/AdamLucka"
+            },
+            {
+                "id": 3,
+                "name": "Garrett Preston",
+                "link": "https://github.com/Garrett-Preston"
+            },
+            {
+                "id": 4,
+                "name": "Luke Matheson",
+                "link": "https://github.com/flare199"
+            },
+            {
+                "id": 5,
+                "name": "Ben Lamkin",
+                "link": "https://github.com/TolkienFan17"
+            },
+            {
+                "id": 6,
+                "name": "Jacob Foss",
+                "link": "https://github.com/yellowsupercar46"
+            },
+            {
+                "id": 7,
+                "name": "Jarod Vandyck",
+                "link": "https://github.com/Jpvandyck1"
+            },
+            {
+                "id": 8,
+                "name": "Cody Chance",
+                "link": "https://github.com/chancec5950"
+            }
+        ]
     },
     {
-        "id": 8,
+        "id": 9,
         "title": "Nomic Game Manager API Side",
         "details": "The API for the Nomic app to retrieve information from.  The API connects to an AWS database.",
         "technologies": ["Kotlin", "Spring", "Gradle", "IntelliJ", "Windows"],
         "image": "nomic_game.jpg",
-        "link": "https://github.com/Kirbitz/NomicGameManager.Mobile"
+        "link": "https://github.com/Kirbitz/NomicGameManager.Api",
+        "contributors": [
+            {
+                "id": 1,
+                "name": "Tiernan Meyer",
+                "link": "https://github.com/meyert8034"
+            },
+            {
+                "id": 2,
+                "name": "Adam Lucka",
+                "link": "https://github.com/AdamLucka"
+            },
+            {
+                "id": 3,
+                "name": "Garrett Preston",
+                "link": "https://github.com/Garrett-Preston"
+            },
+            {
+                "id": 4,
+                "name": "Luke Matheson",
+                "link": "https://github.com/flare199"
+            },
+            {
+                "id": 5,
+                "name": "Ben Lamkin",
+                "link": "https://github.com/TolkienFan17"
+            },
+            {
+                "id": 6,
+                "name": "Jacob Foss",
+                "link": "https://github.com/yellowsupercar46"
+            },
+            {
+                "id": 7,
+                "name": "Jarod Vandyck",
+                "link": "https://github.com/Jpvandyck1"
+            },
+            {
+                "id": 8,
+                "name": "Cody Chance",
+                "link": "https://github.com/chancec5950"
+            }
+        ]
     }
 ]
