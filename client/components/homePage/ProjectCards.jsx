@@ -4,6 +4,8 @@ import PropTypes from 'prop-types'
 import { Avatar, AvatarGroup, Box, Button, Card, CardActions, CardContent, CardMedia, IconButton, Tooltip, Typography } from '@mui/material'
 import { Share } from '@mui/icons-material'
 
+import GitHubLink from '../miscParts/GitHubLink.jsx'
+
 import icons from '../../data/icons.json'
 
 export default function ProjectCards (props) {
@@ -62,11 +64,9 @@ export default function ProjectCards (props) {
         </Typography>
       </CardContent>
       <CardActions sx={{ justifyContent: 'space-between' }}>
-        <Tooltip title="Share">
-          <IconButton>
-            <Share />
-          </IconButton>
-        </Tooltip>
+        <Box sx={{ display: 'flex' }}>
+          <GitHubLink link={project.link} />
+        </Box>
         <Button size='small' onClick={selectProject}>Learn More</Button>
       </CardActions>
     </Card>

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { Avatar, CardMedia, Divider, Grid, IconButton, Tooltip, Typography } from '@mui/material'
+import { Avatar, Box, Button, CardMedia, Divider, Grid, IconButton, Tooltip, Typography } from '@mui/material'
 import { ArrowBack } from '@mui/icons-material'
 
 import icons from '../../data/icons.json'
@@ -67,6 +67,9 @@ export default function HomeContent (props) {
           <Typography align='center' variant='body2' component='div' sx={{ mb: 2 }}>
             {`${project.details}`}
           </Typography>
+          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+            <Button variant='outlined' color='primary' href={project.link}>GitHub Repo</Button>
+          </Box>
         </Grid>
       </Grid>
     </React.Fragment>
