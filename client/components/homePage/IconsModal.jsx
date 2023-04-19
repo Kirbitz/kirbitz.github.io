@@ -27,7 +27,7 @@ export default function IconsModal (props) {
       <IconsModalBody />
       <DialogActions sx={{ justifyContent: 'space-between' }}>
         <Typography variant='subtitle2' component='div' sx={{ ml: 2 }}>
-          Icons provided through devicon.dev
+          Icons Credit devicon.dev and vscode-icons
         </Typography>
         <Button variant='outlined' color='secondary' onClick={hideModal} sx={{ mr: 2 }}>Close</Button>
       </DialogActions>

@@ -34,7 +34,7 @@ export default function PageHeader (props) {
           <Menu />
         </IconButton>
       </Tooltip>
-      <Typography align='center' variant='h3' component='h2' sx={{ flexGrow: 1 }}>
+      <Typography align='center' variant='h3' component='h2' sx={{ flexGrow: 1, mt: 2, mb: 2 }}>
         Tyler Marefke
       </Typography>
       <MaterialUISwitch onClick={toggleDarkMode} />
