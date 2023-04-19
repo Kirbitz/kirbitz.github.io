@@ -5,7 +5,13 @@
         "details": "Tic-Tac-Toe game where the computer will always win.  The computer uses the minimax algorithm to chose the most optimal move.",
         "technologies": ["Java", "Eclipse", "Windows"],
         "image": "MiniMaxTicTacToe.jpg",
-        "link": "https://github.com/Kirbitz/GraphTheoryMiniMaxAlg"
+        "link": "https://github.com/Kirbitz/GraphTheoryMiniMaxAlg",
+        "contributors": [
+            {
+                "name": "Tiernan Meyer",
+                "link": "https://github.com/meyert8034"
+            }
+        ]
     },
     {
         "id": 2,
@@ -29,7 +35,13 @@
         "details": "A variety of different hand ciphers that exist.  Algorithms to encrypt and decrypt those ciphers included for each one.",
         "technologies": ["Python", "VSCode", "Windows"],
         "image": "HandCiphers.jpg",
-        "link": "https://github.com/Kirbitz/HandCiphers"
+        "link": "https://github.com/Kirbitz/HandCiphers",
+        "contributors": [
+            {
+                "name": "Andrew Ujda",
+                "link": "https://github.com/AndrewUjda"
+            }
+        ]
     },
     {
         "id": 5,
@@ -45,7 +57,17 @@
         "details": "A variety of different pixel art upscale algorithms that then get converted to a SVG file format.",
         "technologies": ["Python", "NumPy", "Open CV", "VSCode", "Windows"],
         "image": "pixel_upscale.png",
-        "link": "https://github.com/Kirbitz/Pixel-Upscale-To-SVG"
+        "link": "https://github.com/Kirbitz/Pixel-Upscale-To-SVG",
+        "contributors": [
+            {
+                "name": "Evan Dewitt",
+                "link": "https://github.com/dewitte0210"
+            },
+            {
+                "name": "Jeremy Ivanauski",
+                "link": "https://github.com/Sirunknown91"
+            }
+        ]
     },
     {
         "id": 7,
@@ -53,7 +75,41 @@
         "details": "A mobile app for a board game called Nomic that is meant to act as a game manager.",
         "technologies": ["Kotlin", "Gradle", "Android Development Studio", "Windows"],
         "image": "nomic_game.jpg",
-        "link": "https://github.com/Kirbitz/NomicGameManager.Mobile"
+        "link": "https://github.com/Kirbitz/NomicGameManager.Mobile",
+        "contributors": [
+            {
+                "name": "Tiernan Meyer",
+                "link": "https://github.com/meyert8034"
+            },
+            {
+                "name": "Adam Lucka",
+                "link": "https://github.com/AdamLucka"
+            },
+            {
+                "name": "Garrett Preston",
+                "link": "https://github.com/Garrett-Preston"
+            },
+            {
+                "name": "Luke Matheson",
+                "link": "https://github.com/flare199"
+            },
+            {
+                "name": "Ben Lamkin",
+                "link": "https://github.com/TolkienFan17"
+            },
+            {
+                "name": "Jacob Foss",
+                "link": "https://github.com/yellowsupercar46"
+            },
+            {
+                "name": "Jarod Vandyck",
+                "link": "https://github.com/Jpvandyck1"
+            },
+            {
+                "name": "Cody Chance",
+                "link": "https://github.com/chancec5950"
+            }
+        ]
     },
     {
         "id": 8,
@@ -61,6 +117,40 @@
         "details": "The API for the Nomic app to retrieve information from.  The API connects to an AWS database.",
         "technologies": ["Kotlin", "Spring", "Gradle", "IntelliJ", "Windows"],
         "image": "nomic_game.jpg",
-        "link": "https://github.com/Kirbitz/NomicGameManager.Mobile"
+        "link": "https://github.com/Kirbitz/NomicGameManager.Api",
+        "contributors": [
+            {
+                "name": "Tiernan Meyer",
+                "link": "https://github.com/meyert8034"
+            },
+            {
+                "name": "Adam Lucka",
+                "link": "https://github.com/AdamLucka"
+            },
+            {
+                "name": "Garrett Preston",
+                "link": "https://github.com/Garrett-Preston"
+            },
+            {
+                "name": "Luke Matheson",
+                "link": "https://github.com/flare199"
+            },
+            {
+                "name": "Ben Lamkin",
+                "link": "https://github.com/TolkienFan17"
+            },
+            {
+                "name": "Jacob Foss",
+                "link": "https://github.com/yellowsupercar46"
+            },
+            {
+                "name": "Jarod Vandyck",
+                "link": "https://github.com/Jpvandyck1"
+            },
+            {
+                "name": "Cody Chance",
+                "link": "https://github.com/chancec5950"
+            }
+        ]
     }
 ]

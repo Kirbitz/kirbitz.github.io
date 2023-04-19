@@ -5,6 +5,7 @@ import { Avatar, Box, Button, CardMedia, Divider, Grid, IconButton, Tooltip, Typ
 import { ArrowBack } from '@mui/icons-material'
 
 import icons from '../../data/icons.json'
+import GitHubLink from '../miscParts/GitHubLink'
 
 export default function HomeContent (props) {
   const { changePage, project } = props
@@ -16,6 +17,7 @@ export default function HomeContent (props) {
   }
 
   let iconData = null
+  let contributorsData = null
 
   if(project.technologies) {
     iconData = icons.map(icon => {
@@ -30,6 +32,19 @@ export default function HomeContent (props) {
       } else {
         return
       }
+    })
+  }
+
+  if(project.contributors) {
+    contributorsData = project.contributors.map((contributor, index) => {
+      return(
+        <Grid item key={index} xs={4} sm={3} md={3}>
+          <GitHubLink link={`${contributor.link}`} />
+          <Typography variant='body2' component='div'>
+            {`${contributor.name}`}
+          </Typography>
+        </Grid>
+      )
     })
   }
 
@@ -67,7 +82,13 @@ export default function HomeContent (props) {
           <Typography align='center' variant='body2' component='div' sx={{ mb: 2 }}>
             {`${project.details}`}
           </Typography>
-          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+          <Typography align='center' variant='h5' component='div' sx={{ mt: 4, mb: 2 }}>
+            {`${project.contributors ? 'Additional Contributors' : ''}`}
+          </Typography>
+          <Grid container justifyContent='center' alignItems='center' align='center'>
+            {contributorsData}
+          </Grid>
+          <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
             <Button variant='outlined' color='primary' href={project.link}>GitHub Repo</Button>
           </Box>
         </Grid>
