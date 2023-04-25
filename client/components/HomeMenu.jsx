@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import { Menu, MenuItem } from '@mui/material'
 
-export default function HomeMenu (props) {
+export default function HomeMenu(props) {
   const { anchorEl, onClose, openMenu } = props
 
   const handleClose = () => {
@@ -12,9 +12,9 @@ export default function HomeMenu (props) {
     }
   }
 
-  return(
+  return (
     <Menu
-      id="Home-Menu"
+      id='Home-Menu'
       open={openMenu}
       anchorEl={anchorEl}
       onClose={handleClose}
@@ -29,9 +29,9 @@ export default function HomeMenu (props) {
 
 HomeMenu.propTypes = {
   onClose: PropTypes.func,
-  openMenu: PropTypes.bool.isRequired
+  openMenu: PropTypes.bool.isRequired,
 }
 
 HomeMenu.defaultProps = {
-  onClose: null
+  onClose: null,
 }

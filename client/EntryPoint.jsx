@@ -1,6 +1,11 @@
 import React from 'react'
 
-import { createTheme, Container, CssBaseline, ThemeProvider } from '@mui/material'
+import {
+  createTheme,
+  Container,
+  CssBaseline,
+  ThemeProvider,
+} from '@mui/material'
 
 import PageHeader from './components/PageHeader.jsx'
 import HomeContent from './components/homePage/HomeContent.jsx'
@@ -10,7 +15,7 @@ import PagePanel from './components/miscParts/PagePanel.jsx'
 
 import projects from './data/projects.json'
 
-export default function EntryPoint (props) {
+export default function EntryPoint() {
   const [pageIndex, setPageIndex] = React.useState(0)
   const [darkMode, setDarkMode] = React.useState(false)
 
@@ -24,7 +29,7 @@ export default function EntryPoint (props) {
     setDarkMode(!darkMode)
   }
 
-  const projectPages = projects.map(project => {
+  const projectPages = projects.map((project) => {
     return (
       <PagePanel key={project.id} index={project.id} currentPage={pageIndex}>
         <ProjectContent changePage={changeIndex} project={project} />
@@ -49,12 +54,12 @@ export default function EntryPoint (props) {
 
 const themeLight = createTheme({
   palette: {
-    mode: 'light'
-  }
+    mode: 'light',
+  },
 })
 
 const themeDark = createTheme({
   palette: {
-    mode: 'dark'
-  }
+    mode: 'dark',
+  },
 })

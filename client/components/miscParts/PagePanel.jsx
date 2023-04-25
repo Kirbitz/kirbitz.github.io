@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import { Box } from '@mui/material'
 
-export default function PagePanel (props) {
+export default function PagePanel(props) {
   const { children, currentPage, index } = props
 
   return (
@@ -24,9 +24,9 @@ export default function PagePanel (props) {
 PagePanel.propTypes = {
   children: PropTypes.node,
   currentPage: PropTypes.number.isRequired,
-  index: PropTypes.number.isRequired
+  index: PropTypes.number.isRequired,
 }
 
 PagePanel.defaultProps = {
-  children: null
+  children: null,
 }

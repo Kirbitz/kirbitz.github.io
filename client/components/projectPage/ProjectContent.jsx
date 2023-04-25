@@ -1,13 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { Avatar, Box, Button, CardMedia, Divider, Grid, IconButton, Tooltip, Typography } from '@mui/material'
+import {
+  Avatar,
+  Box,
+  Button,
+  CardMedia,
+  Divider,
+  Grid,
+  IconButton,
+  Tooltip,
+  Typography,
+} from '@mui/material'
 import { ArrowBack } from '@mui/icons-material'
 
 import icons from '../../data/icons.json'
 import GitHubLink from '../miscParts/GitHubLink'
 
-export default function HomeContent (props) {
+export default function HomeContent(props) {
   const { changePage, project } = props
 
   const changeToHome = () => {
@@ -19,13 +29,22 @@ export default function HomeContent (props) {
   let iconData = null
   let contributorsData = null
 
-  if(project.technologies) {
-    iconData = icons.map(icon => {
-      if(project.technologies.find((technology => { return technology === icon.name}))) {
-        return(
+  if (project.technologies) {
+    iconData = icons.map((icon) => {
+      if (
+        project.technologies.find((technology) => {
+          return technology === icon.name
+        })
+      ) {
+        return (
           <Grid item key={icon.id} xs={4} sm={3} md={2}>
             <Tooltip title={`${icon.name}`}>
-              <Avatar alt={`${icon.name}`} src={`${icon.link}`} variant='square' sx={{ mr: 2.5, ml: 2.5 }} />
+              <Avatar
+                alt={`${icon.name}`}
+                src={`${icon.link}`}
+                variant='square'
+                sx={{ mr: 2.5, ml: 2.5 }}
+              />
             </Tooltip>
           </Grid>
         )
@@ -35,9 +54,9 @@ export default function HomeContent (props) {
     })
   }
 
-  if(project.contributors) {
+  if (project.contributors) {
     contributorsData = project.contributors.map((contributor, index) => {
-      return(
+      return (
         <Grid item key={index} xs={4} sm={3} md={3}>
           <GitHubLink link={`${contributor.link}`} />
           <Typography variant='body2' component='div'>
@@ -48,10 +67,15 @@ export default function HomeContent (props) {
     })
   }
 
-  return(
+  return (
     <React.Fragment>
       <Tooltip title='Back to Home'>
-        <IconButton align='left' color='inherit' onClick={changeToHome} sx={{ mt: 3 }}>
+        <IconButton
+          align='left'
+          color='inherit'
+          onClick={changeToHome}
+          sx={{ mt: 3 }}
+        >
           <ArrowBack />
         </IconButton>
       </Tooltip>
@@ -59,6 +83,18 @@ export default function HomeContent (props) {
         {`${project.title}`}
       </Typography>
       <Divider sx={{ mb: 2 }} />
+      <Typography align='center' variant='h5' component='div' sx={{ mb: 2 }}>
+        Technologies Used
+      </Typography>
+      <Grid
+        container
+        justifyContent='center'
+        alignItems='center'
+        align='center'
+        sx={{ mb: 2 }}
+      >
+        {iconData}
+      </Grid>
       <Grid container spacing={2}>
         <Grid item xs={12} sm={12} md={6}>
           <CardMedia
@@ -70,29 +106,45 @@ export default function HomeContent (props) {
           />
         </Grid>
         <Grid item xs={12} sm={12} md={6}>
-          <Typography align='center' variant='h5' component='div' sx={{ mb: 2 }}>
-            Technologies Used
-          </Typography>
-          <Grid container justifyContent='center' alignItems='center' align='center'>
-            {iconData}
-          </Grid>
-          <Typography align='center' variant='h5' component='div' sx={{ mt: 4, mb: 2 }}>
+          <Typography
+            align='center'
+            variant='h5'
+            component='div'
+            sx={{ mt: 4, mb: 2 }}
+          >
             Project Details
           </Typography>
-          <Typography align='center' variant='body2' component='div' sx={{ mb: 2 }}>
+          <Typography
+            align='center'
+            variant='body2'
+            component='div'
+            sx={{ mb: 2 }}
+          >
             {`${project.details}`}
           </Typography>
-          <Typography align='center' variant='h5' component='div' sx={{ mt: 4, mb: 2 }}>
+          <Typography
+            align='center'
+            variant='h5'
+            component='div'
+            sx={{ mt: 4, mb: 2 }}
+          >
             {`${project.contributors ? 'Additional Contributors' : ''}`}
           </Typography>
-          <Grid container justifyContent='center' alignItems='center' align='center'>
+          <Grid
+            container
+            justifyContent='center'
+            alignItems='center'
+            align='center'
+          >
             {contributorsData}
           </Grid>
-          <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
-            <Button variant='outlined' color='primary' href={project.link}>GitHub Repo</Button>
-          </Box>
         </Grid>
       </Grid>
+      <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
+        <Button variant='outlined' color='primary' href={project.link}>
+          GitHub Repo
+        </Button>
+      </Box>
     </React.Fragment>
   )
 }
@@ -104,10 +156,10 @@ HomeContent.propTypes = {
     title: PropTypes.string.isRequired,
     details: PropTypes.string.isRequired,
     technologies: PropTypes.arrayOf(PropTypes.string).isRequired,
-    image: PropTypes.string.isRequired
-  }).isRequired
+    image: PropTypes.string.isRequired,
+  }).isRequired,
 }
 
 HomeContent.defaultProps = {
-  changePage: null
+  changePage: null,
 }

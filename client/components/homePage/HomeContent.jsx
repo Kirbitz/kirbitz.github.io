@@ -6,10 +6,10 @@ import { Divider, Typography } from '@mui/material'
 import Projects from './Projects.jsx'
 import Technologies from './Technologies.jsx'
 
-export default function HomeContent (props) {
+export default function HomeContent(props) {
   const { changePage } = props
 
-  return(
+  return (
     <React.Fragment>
       <Typography align='center' variant='h3' component='div' sx={{ mt: 3 }}>
         Portfolio
@@ -22,9 +22,9 @@ export default function HomeContent (props) {
 }
 
 HomeContent.propTypes = {
-  changePage: PropTypes.func
+  changePage: PropTypes.func,
 }
 
 HomeContent.defaultProps = {
-  changePage: null
+  changePage: null,
 }

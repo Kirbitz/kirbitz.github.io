@@ -3,7 +3,7 @@ import React from 'react'
 import { IconButton, Link, Tooltip } from '@mui/material'
 import { LinkedIn } from '@mui/icons-material'
 
-export default function LinkedInLink (props) {
+export default function LinkedInLink() {
   return (
     <Link color='inherit' href='https://www.linkedin.com/in/tyler-marefke/'>
       <Tooltip title='https://www.linkedin.com/in/tyler-marefke/'>
