@@ -14,6 +14,7 @@ import {
 import { Menu } from '@mui/icons-material'
 
 import HomeMenu from './HomeMenu.jsx'
+import GitHubLink from './miscParts/GitHubLink.jsx'
 
 export default function PageHeader(props) {
   const { toggleDarkMode } = props
@@ -21,28 +22,17 @@ export default function PageHeader(props) {
   const [anchorEl, setAnchorEl] = React.useState(null)
   const openMenu = Boolean(anchorEl)
 
-  const showMenu = (event) => {
-    setAnchorEl(event.currentTarget)
-  }
-
   const hideMenu = () => {
     setAnchorEl(null)
   }
 
   const barData = (
     <React.Fragment>
-      <Tooltip title='Open Menu'>
-        <IconButton
-          size='large'
-          edge='start'
-          color='inherit'
-          aria-label='menu-button'
-          onClick={showMenu}
-          sx={{ mr: 1 }}
-        >
-          <Menu />
-        </IconButton>
-      </Tooltip>
+      <GitHubLink
+        link='https://github.com/Kirbitz'
+        size='large'
+        sx={{ mr: 1 }}
+      />
       <Typography
         align='center'
         variant='h3'

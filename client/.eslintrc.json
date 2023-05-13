@@ -12,5 +12,14 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "rules": {}
+  "rules": {
+    "space-before-function-paren": ["warn", "never"],
+    "comma-dangle": [
+      "warn",
+      {
+        "imports": "always",
+        "objects": "always"
+      }
+    ]
+  }
 }
