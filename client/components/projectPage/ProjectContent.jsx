@@ -49,7 +49,7 @@ export default function HomeContent(props) {
           </Grid>
         )
       } else {
-        return
+        return null
       }
     })
   }
@@ -91,7 +91,7 @@ export default function HomeContent(props) {
         justifyContent='center'
         alignItems='center'
         align='center'
-        sx={{ mb: 2 }}
+        sx={{ mb: 4 }}
       >
         {iconData}
       </Grid>
@@ -115,12 +115,13 @@ export default function HomeContent(props) {
             Project Details
           </Typography>
           <Typography
-            align='center'
+            align='justify'
             variant='body2'
             component='div'
+            gutterBottom={true}
             sx={{ mb: 2 }}
           >
-            {`${project.details}`}
+            {`${project.long_description}`}
           </Typography>
           <Typography
             align='center'
@@ -155,8 +156,17 @@ HomeContent.propTypes = {
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     details: PropTypes.string.isRequired,
+    long_description: PropTypes.string.isRequired,
     technologies: PropTypes.arrayOf(PropTypes.string).isRequired,
     image: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired,
+    contributors: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+        link: PropTypes.string.isRequired,
+      })
+    ),
   }).isRequired,
 }
 

@@ -1,6 +1,6 @@
 {
   "name": "kirbitz.github.io",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "My portfolio website to display technologies and projects that I have worked on",
   "main": "index.js",
   "private": "true",

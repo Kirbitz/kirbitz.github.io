@@ -8,13 +8,6 @@ import GitHubLink from './miscParts/GitHubLink.jsx'
 export default function PageHeader(props) {
   const { toggleDarkMode } = props
 
-  const [anchorEl, setAnchorEl] = React.useState(null)
-  const openMenu = Boolean(anchorEl)
-
-  const hideMenu = () => {
-    setAnchorEl(null)
-  }
-
   const barData = (
     <React.Fragment>
       <GitHubLink
