@@ -18,7 +18,8 @@
       "warn",
       {
         "imports": "only-multiline",
-        "objects": "only-multiline"
+        "objects": "only-multiline",
+        "arrays": "only-multiline"
       }
     ]
   }

@@ -5,7 +5,7 @@ import { Avatar, Box, Grid, Paper, Typography } from '@mui/material'
 import ContactBreadcrumbs from './ContactBreadcrumbs.jsx'
 import ResumeButtons from './miscParts/ResumeButtons.jsx'
 
-export default function ContactMe(props) {
+export default function ContactMe() {
   return (
     <React.Fragment>
       <Typography

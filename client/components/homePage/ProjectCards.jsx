@@ -41,7 +41,7 @@ export default function ProjectCards(props) {
           </Tooltip>
         )
       } else {
-        return
+        return null
       }
     })
   }
@@ -99,10 +99,12 @@ export default function ProjectCards(props) {
 
 ProjectCards.propTypes = {
   project: PropTypes.shape({
+    id: PropTypes.number.isRequired,
     image: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     details: PropTypes.string.isRequired,
     technologies: PropTypes.arrayOf(PropTypes.string).isRequired,
+    link: PropTypes.string.isRequired,
   }).isRequired,
   changePage: PropTypes.func,
 }

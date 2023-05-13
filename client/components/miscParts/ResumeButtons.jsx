@@ -2,9 +2,7 @@ import React from 'react'
 
 import { Button, Grid } from '@mui/material'
 
-function ResumeButtons(props) {
-  const { } = props
-
+function ResumeButtons() {
   return (
     <Grid
       container
