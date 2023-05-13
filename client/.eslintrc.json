@@ -17,8 +17,8 @@
     "comma-dangle": [
       "warn",
       {
-        "imports": "always",
-        "objects": "always"
+        "imports": "only-multiline",
+        "objects": "only-multiline"
       }
     ]
   }
