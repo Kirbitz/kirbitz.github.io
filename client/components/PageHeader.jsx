@@ -1,19 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import {
-  AppBar,
-  Box,
-  IconButton,
-  Switch,
-  styled,
-  Toolbar,
-  Tooltip,
-  Typography,
-} from '@mui/material'
-import { Menu } from '@mui/icons-material'
+import { AppBar, Box, Switch, styled, Toolbar, Typography } from '@mui/material'
 
-import HomeMenu from './HomeMenu.jsx'
 import GitHubLink from './miscParts/GitHubLink.jsx'
 
 export default function PageHeader(props) {
@@ -51,7 +40,6 @@ export default function PageHeader(props) {
         <Toolbar>{barData}</Toolbar>
       </AppBar>
       <Box sx={{ display: 'flex' }}>{barData}</Box>
-      <HomeMenu openMenu={openMenu} anchorEl={anchorEl} onClose={hideMenu} />
     </React.Fragment>
   )
 }
